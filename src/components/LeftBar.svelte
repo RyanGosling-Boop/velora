@@ -9,7 +9,7 @@
 -->
 <aside 
   class="w-10 hover:w-56 bg-black border-r border-white/10 transition-all duration-300 ease-in-out overflow-hidden shrink-0 group relative z-40"
-  style="height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding-top: 12px; padding-bottom: 8px;"
+  style="height: 100vh; display: flex; flex-direction: column; padding-top: 12px; padding-bottom: 8px;"
 >
   
   <!-- 1. TOP SECTION: Branding Logo & Name -->
@@ -25,9 +25,9 @@
   </div>
 
   <!-- 2. MIDDLE SECTION: Navigation Links 
-       This section stays grouped together vertically in the center
+       "my-auto" centers this section vertically by splitting the remaining height evenly 
   -->
-  <div class="w-full flex flex-col gap-2 px-1">
+  <div class="w-full flex flex-col gap-2 px-1 my-auto">
     
     <!-- Dashboard Link -->
     <a 
