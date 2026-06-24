@@ -1,11 +1,11 @@
 <!-- src/components/LeftBar.svelte -->
 <script lang="ts">
-  import { LayoutDashboard, User, Bell, Settings } from 'lucide-svelte';
+  import { Map, Activity, Settings } from 'lucide-svelte';
 </script>
 
 <!-- 
-  We use inline styles to guarantee the display, flex direction, 
-  and full viewport height render directly in the browser.
+  Uses native flexbox column settings to guarantee consistent layout distributions.
+  An inline height rule prevents layout compression on short viewports.
 -->
 <aside 
   class="w-10 hover:w-56 bg-black border-r border-white/10 transition-all duration-300 ease-in-out overflow-hidden shrink-0 group relative z-40"
@@ -25,40 +25,30 @@
   </div>
 
   <!-- 2. MIDDLE SECTION: Navigation Links 
-       "my-auto" centers this section vertically by splitting the remaining height evenly 
+       "my-auto" automatically splits the top and bottom margins, 
+       perfectly centering these two links in the remaining space.
   -->
   <div class="w-full flex flex-col gap-2 px-1 my-auto">
     
-    <!-- Dashboard Link -->
+    <!-- Map Link -->
     <a 
-      href="#dashboard" 
+      href="#map" 
       class="flex items-center gap-3.5 h-8 w-full rounded-md hover:bg-zinc-900/60 text-zinc-400 hover:text-zinc-100 transition-colors px-2"
     >
-      <LayoutDashboard class="w-4 h-4 shrink-0" strokeWidth={1.5} />
+      <Map class="w-4 h-4 shrink-0" strokeWidth={1.5} />
       <span class="text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100 whitespace-nowrap">
-        Dashboard
+        Map
       </span>
     </a>
 
-    <!-- Profile Link -->
+    <!-- Activities Link -->
     <a 
-      href="#profile" 
+      href="#activities" 
       class="flex items-center gap-3.5 h-8 w-full rounded-md hover:bg-zinc-900/60 text-zinc-400 hover:text-zinc-100 transition-colors px-2"
     >
-      <User class="w-4 h-4 shrink-0" strokeWidth={1.5} />
+      <Activity class="w-4 h-4 shrink-0" strokeWidth={1.5} />
       <span class="text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100 whitespace-nowrap">
-        Student Profile
-      </span>
-    </a>
-
-    <!-- Notifications Link -->
-    <a 
-      href="#notifications" 
-      class="flex items-center gap-3.5 h-8 w-full rounded-md hover:bg-zinc-900/60 text-zinc-400 hover:text-zinc-100 transition-colors px-2"
-    >
-      <Bell class="w-4 h-4 shrink-0" strokeWidth={1.5} />
-      <span class="text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100 whitespace-nowrap">
-        Milestone Alerts
+        Activities
       </span>
     </a>
 
