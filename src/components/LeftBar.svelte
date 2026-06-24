@@ -7,27 +7,22 @@
   class="w-10 shrink-0 relative z-50 group" 
   style="height: 100vh;"
 >
-  
   <!-- 
     SIDEBAR 
-    - Width: w-10 to w-48
-    - Shadow: When hovered, it casts a massive, very dense black shadow (shadow-2xl/shadow-black). 
-      On your black background, this will "eat" the grid and the Safari mockup to create depth.
+    - Clean expansion from w-10 to w-48.
+    - No external shadows or blurs.
+    - Border-r provides the only separation.
   -->
   <aside 
     class="absolute left-0 top-0 h-full w-10 group-hover:w-48 
            bg-black border-r border-white/10 
            flex flex-col justify-between pt-3 pb-4 select-none overflow-hidden
-           transition-[width] duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)]
-           shadow-none group-hover:shadow-[30px_0_100px_40px_rgba(0,0,0,0.9)]"
+           transition-[width] duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
   >
-    <!-- 
-      INTENSE BLUR LAYER 
-      The backdrop-blur-3xl provides the "glass" look you like.
-    -->
+    <!-- INTERNAL BLUR (The 'glass' effect you liked inside the bar) -->
     <div class="absolute inset-0 bg-zinc-950/60 backdrop-blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
-    <!-- 1. TOP SECTION: High-Contrast Logo -->
+    <!-- 1. TOP SECTION: Logo -->
     <div class="relative z-10 w-full px-1.5 shrink-0">
       <div class="flex items-center h-10 w-full px-1">
         <div class="w-7 flex justify-start items-center shrink-0">
@@ -41,7 +36,7 @@
       </div>
     </div>
 
-    <!-- 2. MIDDLE SECTION -->
+    <!-- 2. MIDDLE SECTION: Navigation -->
     <div class="relative z-10 w-full flex flex-col gap-0.5 px-1.5 my-auto">
       
       {#each [
@@ -52,7 +47,7 @@
           href={item.href} 
           class="group/item relative flex items-center h-9 w-full text-zinc-500 hover:text-white transition-colors duration-75 px-1"
         >
-          <!-- QUICK HIGHLIGHT: Scale duration 75ms for instant snap -->
+          <!-- QUICK INDICATOR: 75ms snap -->
           <div class="absolute left-0 w-[1.5px] h-4 bg-white scale-y-0 group-hover/item:scale-y-100 transition-transform duration-75 origin-center"></div>
           
           <div class="w-7 flex justify-start items-center shrink-0">
@@ -66,7 +61,7 @@
 
     </div>
 
-    <!-- 3. BOTTOM SECTION -->
+    <!-- 3. BOTTOM SECTION: Settings -->
     <div class="relative z-10 w-full px-1.5 shrink-0">
       <a 
         href="#settings" 
