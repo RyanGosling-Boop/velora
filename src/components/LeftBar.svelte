@@ -1,6 +1,6 @@
 <!-- src/components/LeftBar.svelte -->
 <script lang="ts">
-  import { Map, Activity, Settings } from 'lucide-svelte';
+  import { Map, Activity, Settings, GraduationCap } from 'lucide-svelte';
 </script>
 
 <div 
@@ -19,7 +19,7 @@
            flex flex-col justify-between pt-3 pb-4 select-none overflow-hidden
            transition-[width] duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
   >
-    <!-- INTERNAL BLUR (The 'glass' effect you liked inside the bar) -->
+    <!-- INTERNAL BLUR -->
     <div class="absolute inset-0 bg-zinc-950/60 backdrop-blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
     <!-- 1. TOP SECTION: Logo -->
@@ -41,6 +41,7 @@
       
       {#each [
         { href: '/map', icon: Map, label: 'Map' },
+        { href: '/colleges', icon: GraduationCap, label: 'Colleges' },
         { href: '/activities', icon: Activity, label: 'Activities' }
       ] as item}
         <a 
