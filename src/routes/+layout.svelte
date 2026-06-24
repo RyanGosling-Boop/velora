@@ -1,16 +1,25 @@
 <!-- src/routes/+layout.svelte -->
 <script lang="ts">
   import '../app.css';
+  import { page } from '$app/state'; // SvelteKit reactive page state
   import LeftBar from '../components/LeftBar.svelte';
 
-  // Svelte 5 render slot syntax
-  let { children } = $props(); 
+  // Svelte 5 layout render property
+  let { children } = $props();
+
+  // Sidebar mounts only on internal map or activities routes
+  const isAppRoute = $derived(
+    page.url.pathname.startsWith('/map') || 
+    page.url.pathname.startsWith('/activities')
+  );
 </script>
 
-<!-- Clean horizontal layout: LeftBar side-by-side with the active page -->
+<!-- Main container layout -->
 <div class="h-screen w-full flex flex-row overflow-hidden bg-black select-none">
   <!-- Persistent Leftmost Sidebar -->
-  <LeftBar />
+  {#if isAppRoute}
+    <LeftBar />
+  {/if}
   
   <!-- Remaining active workspace takes exactly the remaining width -->
   <div class="flex-1 min-h-0 relative overflow-hidden">
@@ -19,7 +28,7 @@
 </div>
 
 <style>
-  /* Base reset to lock down default browser margins and rubber-banding */
+  /* Global CSS Reset: Prevents browser scroll-chaining and layout shifts */
   :global(html, body) {
     margin: 0;
     padding: 0;

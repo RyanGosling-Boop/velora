@@ -17,7 +17,7 @@
     this panel stretches horizontally, casting a shadow and blurring the background.
   -->
   <aside 
-    class="absolute left-0 top-0 h-full w-10 group-hover:w-56 bg-black/90 group-hover:bg-zinc-950/80 group-hover:backdrop-blur-xlbg-zinc-950/80 backdrop-blur-xl border-r border-white/10 flex flex-col justify-between pt-3 pb-2 transition-all duration-300 ease-in-out overflow-hidden select-none
+    class="absolute left-0 top-0 h-full w-10 group-hover:w-56 bg-black/90 group-hover:bg-zinc-950/80 group-hover:backdrop-blur-xl border-r border-white/10 flex flex-col justify-between pt-3 pb-2 transition-all duration-300 ease-in-out overflow-hidden select-none
            shadow-[0_0_0_rgba(0,0,0,0)] group-hover:shadow-[30px_0_60px_-15px_rgba(0,0,0,0.95)]"
   >
     
@@ -33,12 +33,15 @@
       </div>
     </div>
 
-    <!-- 2. MIDDLE SECTION: Navigation Links -->
+    <!-- 2. MIDDLE SECTION: Navigation Links 
+         "my-auto" automatically splits the top and bottom margins, 
+         perfectly centering these links in the remaining space.
+    -->
     <div class="w-full flex flex-col gap-2 px-1 my-auto">
       
-      <!-- Map Link -->
+      <!-- Map Link: Routes to the pathfinder canvas -->
       <a 
-        href="/" 
+        href="/map" 
         class="flex items-center gap-3.5 h-8 w-full rounded-md hover:bg-zinc-900/60 text-zinc-400 hover:text-zinc-100 transition-colors px-2"
       >
         <Map class="w-4 h-4 shrink-0" strokeWidth={1.5} />
@@ -47,7 +50,7 @@
         </span>
       </a>
 
-      <!-- Activities Link -->
+      <!-- Activities Link: Routes to the activities logger -->
       <a 
         href="/activities" 
         class="flex items-center gap-3.5 h-8 w-full rounded-md hover:bg-zinc-900/60 text-zinc-400 hover:text-zinc-100 transition-colors px-2"
