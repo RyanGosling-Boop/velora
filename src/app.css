@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+/* src/app.css (or your global CSS file) */
+
+/* Global viewport override to lock scroll rubber-banding and margins */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
