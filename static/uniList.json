@@ -1,0 +1,2266 @@
+[
+    {
+        "n": "University of California, Los Angeles",
+        "u": "https://ucla.edu",
+        "g": "3.93",
+        "t": "1450",
+        "c": "$71,000",
+        "o": true
+    },
+    {
+        "n": "New York University",
+        "u": "https://nyu.edu",
+        "g": "3.80",
+        "t": "1520",
+        "c": "$88,000",
+        "o": true
+    },
+    {
+        "n": "University of California, San Diego",
+        "u": "https://ucsd.edu",
+        "g": "3.88",
+        "t": "1430",
+        "c": "$68,000",
+        "o": true
+    },
+    {
+        "n": "University of California, Berkeley",
+        "u": "https://berkeley.edu",
+        "g": "3.91",
+        "t": "1480",
+        "c": "$73,000",
+        "o": true
+    },
+    {
+        "n": "University of California, Irvine",
+        "u": "https://uci.edu",
+        "g": "3.85",
+        "t": "1410",
+        "c": "$67,000",
+        "o": true
+    },
+    {
+        "n": "University of California, Santa Barbara",
+        "u": "https://ucsb.edu",
+        "g": "3.86",
+        "t": "1420",
+        "c": "$69,000",
+        "o": true
+    },
+    {
+        "n": "Northeastern University",
+        "u": "https://northeastern.edu",
+        "g": "3.91",
+        "t": "1510",
+        "c": "$84,000",
+        "o": true
+    },
+    {
+        "n": "Pennsylvania State University",
+        "u": "https://psu.edu",
+        "g": "3.65",
+        "t": "1300",
+        "c": "$55,000",
+        "o": true
+    },
+    {
+        "n": "Arizona State University",
+        "u": "https://asu.edu",
+        "g": "3.54",
+        "t": "1220",
+        "c": "$51,000",
+        "o": true
+    },
+    {
+        "n": "University of Florida",
+        "u": "https://ufl.edu",
+        "g": "3.90",
+        "t": "1390",
+        "c": "$45,000",
+        "o": false
+    },
+    {
+        "n": "University of Southern California",
+        "u": "https://usc.edu",
+        "g": "3.85",
+        "t": "1500",
+        "c": "$86,000",
+        "o": true
+    },
+    {
+        "n": "Boston University",
+        "u": "https://bu.edu",
+        "g": "3.81",
+        "t": "1470",
+        "c": "$85,000",
+        "o": true
+    },
+    {
+        "n": "University of Texas at Austin",
+        "u": "https://utexas.edu",
+        "g": "3.84",
+        "t": "1420",
+        "c": "$60,000",
+        "o": false
+    },
+    {
+        "n": "Texas A&M University",
+        "u": "https://tamu.edu",
+        "g": "3.68",
+        "t": "1270",
+        "c": "$58,000",
+        "o": true
+    },
+    {
+        "n": "University of Michigan",
+        "u": "https://umich.edu",
+        "g": "3.90",
+        "t": "1480",
+        "c": "$76,000",
+        "o": true
+    },
+    {
+        "n": "University of California, Davis",
+        "u": "https://ucdavis.edu",
+        "g": "3.82",
+        "t": "1380",
+        "c": "$68,000",
+        "o": true
+    },
+    {
+        "n": "Florida State University",
+        "u": "https://fsu.edu",
+        "g": "3.80",
+        "t": "1300",
+        "c": "$38,000",
+        "o": false
+    },
+    {
+        "n": "San Diego State University",
+        "u": "https://sdsu.edu",
+        "g": "3.71",
+        "t": "1240",
+        "c": "$46,000",
+        "o": true
+    },
+    {
+        "n": "University of Washington",
+        "u": "https://uw.edu",
+        "g": "3.82",
+        "t": "1400",
+        "c": "$61,000",
+        "o": true
+    },
+    {
+        "n": "Purdue University",
+        "u": "https://purdue.edu",
+        "g": "3.75",
+        "t": "1350",
+        "c": "$45,000",
+        "o": false
+    },
+    {
+        "n": "Ohio State University",
+        "u": "https://osu.edu",
+        "g": "3.76",
+        "t": "1340",
+        "c": "$56,000",
+        "o": true
+    },
+    {
+        "n": "University of Colorado Boulder",
+        "u": "https://colorado.edu",
+        "g": "3.68",
+        "t": "1310",
+        "c": "$62,000",
+        "o": true
+    },
+    {
+        "n": "University of Central Florida",
+        "u": "https://ucf.edu",
+        "g": "3.90",
+        "t": "1320",
+        "c": "$38,000",
+        "o": false
+    },
+    {
+        "n": "University of Georgia",
+        "u": "https://uga.edu",
+        "g": "3.92",
+        "t": "1350",
+        "c": "$48,000",
+        "o": false
+    },
+    {
+        "n": "Georgia Institute of Technology",
+        "u": "https://gatech.edu",
+        "g": "3.95",
+        "t": "1480",
+        "c": "$52,000",
+        "o": false
+    },
+    {
+        "n": "Rutgers University",
+        "u": "https://rutgers.edu",
+        "g": "3.60",
+        "t": "1340",
+        "c": "$54,000",
+        "o": true
+    },
+    {
+        "n": "University of Maryland",
+        "u": "https://umd.edu",
+        "g": "3.84",
+        "t": "1420",
+        "c": "$59,000",
+        "o": true
+    },
+    {
+        "n": "University of Wisconsin-Madison",
+        "u": "https://wisc.edu",
+        "g": "3.86",
+        "t": "1430",
+        "c": "$58,000",
+        "o": true
+    },
+    {
+        "n": "University of Illinois Urbana-Champaign",
+        "u": "https://illinois.edu",
+        "g": "3.80",
+        "t": "1410",
+        "c": "$58,000",
+        "o": true
+    },
+    {
+        "n": "Cornell University",
+        "u": "https://cornell.edu",
+        "g": "3.92",
+        "t": "1530",
+        "c": "$87,000",
+        "o": true
+    },
+    {
+        "n": "Columbia University",
+        "u": "https://columbia.edu",
+        "g": "3.94",
+        "t": "1540",
+        "c": "$89,000",
+        "o": true
+    },
+    {
+        "n": "University of North Carolina at Chapel Hill",
+        "u": "https://unc.edu",
+        "g": "3.85",
+        "t": "1440",
+        "c": "$58,000",
+        "o": true
+    },
+    {
+        "n": "University of Virginia",
+        "u": "https://virginia.edu",
+        "g": "3.90",
+        "t": "1470",
+        "c": "$74,000",
+        "o": true
+    },
+    {
+        "n": "Clemson University",
+        "u": "https://clemson.edu",
+        "g": "3.85",
+        "t": "1320",
+        "c": "$57,000",
+        "o": true
+    },
+    {
+        "n": "North Carolina State University",
+        "u": "https://ncsu.edu",
+        "g": "3.78",
+        "t": "1340",
+        "c": "$50,000",
+        "o": true
+    },
+    {
+        "n": "Michigan State University",
+        "u": "https://msu.edu",
+        "g": "3.62",
+        "t": "1230",
+        "c": "$54,000",
+        "o": true
+    },
+    {
+        "n": "University of Oregon",
+        "u": "https://uoregon.edu",
+        "g": "3.60",
+        "t": "1250",
+        "c": "$56,000",
+        "o": true
+    },
+    {
+        "n": "University of South Carolina",
+        "u": "https://sc.edu",
+        "g": "3.80",
+        "t": "1280",
+        "c": "$53,000",
+        "o": true
+    },
+    {
+        "n": "Indiana University Bloomington",
+        "u": "https://indiana.edu",
+        "g": "3.75",
+        "t": "1310",
+        "c": "$55,000",
+        "o": true
+    },
+    {
+        "n": "University of Alabama",
+        "u": "https://ua.edu",
+        "g": "3.71",
+        "t": "1250",
+        "c": "$51,000",
+        "o": true
+    },
+    {
+        "n": "Auburn University",
+        "u": "https://auburn.edu",
+        "g": "3.82",
+        "t": "1300",
+        "c": "$53,000",
+        "o": true
+    },
+    {
+        "n": "University of Minnesota Twin Cities",
+        "u": "https://umn.edu",
+        "g": "3.75",
+        "t": "1360",
+        "c": "$54,000",
+        "o": true
+    },
+    {
+        "n": "University of Arizona",
+        "u": "https://arizona.edu",
+        "g": "3.50",
+        "t": "1240",
+        "c": "$54,000",
+        "o": true
+    },
+    {
+        "n": "University of Utah",
+        "u": "https://utah.edu",
+        "g": "3.65",
+        "t": "1270",
+        "c": "$49,000",
+        "o": true
+    },
+    {
+        "n": "Virginia Tech",
+        "u": "https://vt.edu",
+        "g": "3.85",
+        "t": "1330",
+        "c": "$52,000",
+        "o": true
+    },
+    {
+        "n": "James Madison University",
+        "u": "https://jmu.edu",
+        "g": "3.55",
+        "t": "1210",
+        "c": "$48,000",
+        "o": true
+    },
+    {
+        "n": "University of South Florida",
+        "u": "https://usf.edu",
+        "g": "3.90",
+        "t": "1300",
+        "c": "$35,000",
+        "o": false
+    },
+    {
+        "n": "George Mason University",
+        "u": "https://gmu.edu",
+        "g": "3.65",
+        "t": "1240",
+        "c": "$54,000",
+        "o": true
+    },
+    {
+        "n": "Temple University",
+        "u": "https://temple.edu",
+        "g": "3.50",
+        "t": "1250",
+        "c": "$52,000",
+        "o": true
+    },
+    {
+        "n": "Drexel University",
+        "u": "https://drexel.edu",
+        "g": "3.75",
+        "t": "1320",
+        "c": "$78,000",
+        "o": true
+    },
+    {
+        "n": "University of Pittsburgh",
+        "u": "https://pitt.edu",
+        "g": "3.90",
+        "t": "1380",
+        "c": "$56,000",
+        "o": true
+    },
+    {
+        "n": "University of Miami",
+        "u": "https://miami.edu",
+        "g": "3.80",
+        "t": "1400",
+        "c": "$85,000",
+        "o": true
+    },
+    {
+        "n": "Syracuse University",
+        "u": "https://syracuse.edu",
+        "g": "3.70",
+        "t": "1310",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "Villanova University",
+        "u": "https://villanova.edu",
+        "g": "3.90",
+        "t": "1450",
+        "c": "$82,000",
+        "o": true
+    },
+    {
+        "n": "Boston College",
+        "u": "https://bc.edu",
+        "g": "3.91",
+        "t": "1480",
+        "c": "$86,000",
+        "o": true
+    },
+    {
+        "n": "Georgetown University",
+        "u": "https://georgetown.edu",
+        "g": "3.91",
+        "t": "1510",
+        "c": "$87,000",
+        "o": false
+    },
+    {
+        "n": "George Washington University",
+        "u": "https://gwu.edu",
+        "g": "3.75",
+        "t": "1400",
+        "c": "$84,000",
+        "o": true
+    },
+    {
+        "n": "American University",
+        "u": "https://american.edu",
+        "g": "3.70",
+        "t": "1340",
+        "c": "$75,000",
+        "o": true
+    },
+    {
+        "n": "University of Delaware",
+        "u": "https://udel.edu",
+        "g": "3.80",
+        "t": "1280",
+        "c": "$57,000",
+        "o": true
+    },
+    {
+        "n": "University of Massachusetts Amherst",
+        "u": "https://umass.edu",
+        "g": "3.90",
+        "t": "1360",
+        "c": "$56,000",
+        "o": true
+    },
+    {
+        "n": "University of Connecticut",
+        "u": "https://uconn.edu",
+        "g": "3.76",
+        "t": "1330",
+        "c": "$59,000",
+        "o": true
+    },
+    {
+        "n": "University of Vermont",
+        "u": "https://uvm.edu",
+        "g": "3.75",
+        "t": "1320",
+        "c": "$63,000",
+        "o": true
+    },
+    {
+        "n": "University of New Hampshire",
+        "u": "https://unh.edu",
+        "g": "3.55",
+        "t": "1200",
+        "c": "$55,000",
+        "o": true
+    },
+    {
+        "n": "University of Kentucky",
+        "u": "https://uky.edu",
+        "g": "3.60",
+        "t": "1220",
+        "c": "$51,000",
+        "o": true
+    },
+    {
+        "n": "University of Tennessee",
+        "u": "https://utk.edu",
+        "g": "3.85",
+        "t": "1280",
+        "c": "$50,000",
+        "o": true
+    },
+    {
+        "n": "Louisiana State University",
+        "u": "https://lsu.edu",
+        "g": "3.50",
+        "t": "1200",
+        "c": "$47,000",
+        "o": true
+    },
+    {
+        "n": "Ole Miss",
+        "u": "https://olemiss.edu",
+        "g": "3.60",
+        "t": "1210",
+        "c": "$46,000",
+        "o": true
+    },
+    {
+        "n": "Mississippi State University",
+        "u": "https://msstate.edu",
+        "g": "3.55",
+        "t": "1180",
+        "c": "$44,000",
+        "o": true
+    },
+    {
+        "n": "University of Arkansas",
+        "u": "https://uark.edu",
+        "g": "3.75",
+        "t": "1240",
+        "c": "$45,000",
+        "o": true
+    },
+    {
+        "n": "Oklahoma State University",
+        "u": "https://okstate.edu",
+        "g": "3.60",
+        "t": "1160",
+        "c": "$45,000",
+        "o": true
+    },
+    {
+        "n": "University of Oklahoma",
+        "u": "https://ou.edu",
+        "g": "3.65",
+        "t": "1250",
+        "c": "$48,000",
+        "o": true
+    },
+    {
+        "n": "University of Kansas",
+        "u": "https://ku.edu",
+        "g": "3.65",
+        "t": "1240",
+        "c": "$47,000",
+        "o": true
+    },
+    {
+        "n": "Kansas State University",
+        "u": "https://k-state.edu",
+        "g": "3.60",
+        "t": "1190",
+        "c": "$43,000",
+        "o": true
+    },
+    {
+        "n": "University of Missouri",
+        "u": "https://missouri.edu",
+        "g": "3.65",
+        "t": "1260",
+        "c": "$50,000",
+        "o": true
+    },
+    {
+        "n": "Iowa State University",
+        "u": "https://iastate.edu",
+        "g": "3.70",
+        "t": "1230",
+        "c": "$44,000",
+        "o": true
+    },
+    {
+        "n": "University of Iowa",
+        "u": "https://uiowa.edu",
+        "g": "3.80",
+        "t": "1260",
+        "c": "$52,000",
+        "o": true
+    },
+    {
+        "n": "University of Nebraska-Lincoln",
+        "u": "https://unl.edu",
+        "g": "3.65",
+        "t": "1230",
+        "c": "$45,000",
+        "o": true
+    },
+    {
+        "n": "Colorado State University",
+        "u": "https://colostate.edu",
+        "g": "3.70",
+        "t": "1220",
+        "c": "$51,000",
+        "o": true
+    },
+    {
+        "n": "Oregon State University",
+        "u": "https://oregonstate.edu",
+        "g": "3.65",
+        "t": "1240",
+        "c": "$52,000",
+        "o": true
+    },
+    {
+        "n": "Washington State University",
+        "u": "https://wsu.edu",
+        "g": "3.50",
+        "t": "1150",
+        "c": "$48,000",
+        "o": true
+    },
+    {
+        "n": "University of San Francisco",
+        "u": "https://usfca.edu",
+        "g": "3.60",
+        "t": "1280",
+        "c": "$76,000",
+        "o": true
+    },
+    {
+        "n": "Santa Clara University",
+        "u": "https://scu.edu",
+        "g": "3.75",
+        "t": "1380",
+        "c": "$82,000",
+        "o": true
+    },
+    {
+        "n": "Loyola Marymount University",
+        "u": "https://lmu.edu",
+        "g": "3.80",
+        "t": "1350",
+        "c": "$80,000",
+        "o": true
+    },
+    {
+        "n": "Pepperdine University",
+        "u": "https://pepperdine.edu",
+        "g": "3.70",
+        "t": "1350",
+        "c": "$87,000",
+        "o": true
+    },
+    {
+        "n": "San Francisco State University",
+        "u": "https://sfsu.edu",
+        "g": "3.40",
+        "t": "1100",
+        "c": "$42,000",
+        "o": true
+    },
+    {
+        "n": "California State University, Long Beach",
+        "u": "https://csulb.edu",
+        "g": "3.60",
+        "t": "1150",
+        "c": "$40,000",
+        "o": true
+    },
+    {
+        "n": "California State University, Fullerton",
+        "u": "https://fullerton.edu",
+        "g": "3.50",
+        "t": "1130",
+        "c": "$40,000",
+        "o": true
+    },
+    {
+        "n": "California Polytechnic State University, SLO",
+        "u": "https://calpoly.edu",
+        "g": "3.90",
+        "t": "1380",
+        "c": "$50,000",
+        "o": true
+    },
+    {
+        "n": "Pomona College",
+        "u": "https://pomona.edu",
+        "g": "3.95",
+        "t": "1510",
+        "c": "$85,000",
+        "o": true
+    },
+    {
+        "n": "University of Notre Dame",
+        "u": "https://nd.edu",
+        "g": "3.95",
+        "t": "1520",
+        "c": "$84,000",
+        "o": true
+    },
+    {
+        "n": "Vanderbilt University",
+        "u": "https://vanderbilt.edu",
+        "g": "3.95",
+        "t": "1530",
+        "c": "$87,000",
+        "o": true
+    },
+    {
+        "n": "Rice University",
+        "u": "https://rice.edu",
+        "g": "3.96",
+        "t": "1540",
+        "c": "$80,000",
+        "o": true
+    },
+    {
+        "n": "Emory University",
+        "u": "https://emory.edu",
+        "g": "3.85",
+        "t": "1500",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "Duke University",
+        "u": "https://duke.edu",
+        "g": "3.95",
+        "t": "1540",
+        "c": "$86,000",
+        "o": true
+    },
+    {
+        "n": "Tulane University",
+        "u": "https://tulane.edu",
+        "g": "3.75",
+        "t": "1450",
+        "c": "$85,000",
+        "o": true
+    },
+    {
+        "n": "Wake Forest University",
+        "u": "https://wfu.edu",
+        "g": "3.85",
+        "t": "1420",
+        "c": "$86,000",
+        "o": true
+    },
+    {
+        "n": "Davidson College",
+        "u": "https://davidson.edu",
+        "g": "3.90",
+        "t": "1430",
+        "c": "$79,000",
+        "o": true
+    },
+    {
+        "n": "University of Richmond",
+        "u": "https://richmond.edu",
+        "g": "3.80",
+        "t": "1420",
+        "c": "$78,000",
+        "o": true
+    },
+    {
+        "n": "William & Mary",
+        "u": "https://wm.edu",
+        "g": "3.90",
+        "t": "1440",
+        "c": "$65,000",
+        "o": true
+    },
+    {
+        "n": "Elon University",
+        "u": "https://elon.edu",
+        "g": "3.65",
+        "t": "1250",
+        "c": "$65,000",
+        "o": true
+    },
+    {
+        "n": "Fordham University",
+        "u": "https://fordham.edu",
+        "g": "3.75",
+        "t": "1380",
+        "c": "$85,000",
+        "o": true
+    },
+    {
+        "n": "St. John's University",
+        "u": "https://stjohns.edu",
+        "g": "3.50",
+        "t": "1200",
+        "c": "$72,000",
+        "o": true
+    },
+    {
+        "n": "Hofstra University",
+        "u": "https://hofstra.edu",
+        "g": "3.60",
+        "t": "1280",
+        "c": "$75,000",
+        "o": true
+    },
+    {
+        "n": "Stony Brook University",
+        "u": "https://stonybrook.edu",
+        "g": "3.85",
+        "t": "1390",
+        "c": "$52,000",
+        "o": true
+    },
+    {
+        "n": "University at Buffalo",
+        "u": "https://buffalo.edu",
+        "g": "3.70",
+        "t": "1280",
+        "c": "$50,000",
+        "o": true
+    },
+    {
+        "n": "Binghamton University",
+        "u": "https://binghamton.edu",
+        "g": "3.90",
+        "t": "1390",
+        "c": "$51,000",
+        "o": true
+    },
+    {
+        "n": "University at Albany",
+        "u": "https://albany.edu",
+        "g": "3.50",
+        "t": "1210",
+        "c": "$49,000",
+        "o": true
+    },
+    {
+        "n": "Rochester Institute of Technology",
+        "u": "https://rit.edu",
+        "g": "3.75",
+        "t": "1340",
+        "c": "$75,000",
+        "o": true
+    },
+    {
+        "n": "University of Rochester",
+        "u": "https://rochester.edu",
+        "g": "3.85",
+        "t": "1480",
+        "c": "$86,000",
+        "o": true
+    },
+    {
+        "n": "Rensselaer Polytechnic Institute",
+        "u": "https://rpi.edu",
+        "g": "3.90",
+        "t": "1450",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "Lehigh University",
+        "u": "https://lehigh.edu",
+        "g": "3.85",
+        "t": "1440",
+        "c": "$81,000",
+        "o": true
+    },
+    {
+        "n": "Bucknell University",
+        "u": "https://bucknell.edu",
+        "g": "3.65",
+        "t": "1380",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "Lafayette College",
+        "u": "https://lafayette.edu",
+        "g": "3.70",
+        "t": "1400",
+        "c": "$81,000",
+        "o": true
+    },
+    {
+        "n": "Carnegie Mellon University",
+        "u": "https://cmu.edu",
+        "g": "3.91",
+        "t": "1540",
+        "c": "$84,000",
+        "o": true
+    },
+    {
+        "n": "Case Western Reserve University",
+        "u": "https://case.edu",
+        "g": "3.88",
+        "t": "1480",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "Miami University (Ohio)",
+        "u": "https://miamioh.edu",
+        "g": "3.75",
+        "t": "1300",
+        "c": "$58,000",
+        "o": true
+    },
+    {
+        "n": "University of Cincinnati",
+        "u": "https://uc.edu",
+        "g": "3.65",
+        "t": "1280",
+        "c": "$48,000",
+        "o": true
+    },
+    {
+        "n": "Ball State University",
+        "u": "https://bsu.edu",
+        "g": "3.50",
+        "t": "1150",
+        "c": "$45,000",
+        "o": true
+    },
+    {
+        "n": "DePaul University",
+        "u": "https://depaul.edu",
+        "g": "3.50",
+        "t": "1230",
+        "c": "$65,000",
+        "o": true
+    },
+    {
+        "n": "Loyola University Chicago",
+        "u": "https://luc.edu",
+        "g": "3.80",
+        "t": "1280",
+        "c": "$72,000",
+        "o": true
+    },
+    {
+        "n": "Northwestern University",
+        "u": "https://northwestern.edu",
+        "g": "3.95",
+        "t": "1540",
+        "c": "$89,000",
+        "o": true
+    },
+    {
+        "n": "University of Chicago",
+        "u": "https://uchicago.edu",
+        "g": "3.98",
+        "t": "1550",
+        "c": "$89,000",
+        "o": true
+    },
+    {
+        "n": "Marquette University",
+        "u": "https://marquette.edu",
+        "g": "3.65",
+        "t": "1280",
+        "c": "$68,000",
+        "o": true
+    },
+    {
+        "n": "Saint Louis University",
+        "u": "https://slu.edu",
+        "g": "3.85",
+        "t": "1330",
+        "c": "$72,000",
+        "o": true
+    },
+    {
+        "n": "Washington University in St. Louis",
+        "u": "https://wustl.edu",
+        "g": "3.92",
+        "t": "1540",
+        "c": "$87,000",
+        "o": true
+    },
+    {
+        "n": "University of Nevada, Las Vegas",
+        "u": "https://unlv.edu",
+        "g": "3.45",
+        "t": "1150",
+        "c": "$44,000",
+        "o": true
+    },
+    {
+        "n": "University of Nevada, Reno",
+        "u": "https://unr.edu",
+        "g": "3.40",
+        "t": "1160",
+        "c": "$42,000",
+        "o": true
+    },
+    {
+        "n": "University of New Mexico",
+        "u": "https://unm.edu",
+        "g": "3.45",
+        "t": "1140",
+        "c": "$45,000",
+        "o": true
+    },
+    {
+        "n": "Montana State University",
+        "u": "https://montana.edu",
+        "g": "3.55",
+        "t": "1230",
+        "c": "$48,000",
+        "o": true
+    },
+    {
+        "n": "University of Idaho",
+        "u": "https://uidaho.edu",
+        "g": "3.50",
+        "t": "1180",
+        "c": "$44,000",
+        "o": true
+    },
+    {
+        "n": "Boise State University",
+        "u": "https://boisestate.edu",
+        "g": "3.45",
+        "t": "1140",
+        "c": "$43,000",
+        "o": true
+    },
+    {
+        "n": "University of Wyoming",
+        "u": "https://uwyo.edu",
+        "g": "3.50",
+        "t": "1180",
+        "c": "$38,000",
+        "o": true
+    },
+    {
+        "n": "University of Hawaii at Manoa",
+        "u": "https://hawaii.edu",
+        "g": "3.65",
+        "t": "1210",
+        "c": "$54,000",
+        "o": true
+    },
+    {
+        "n": "University of Alaska Fairbanks",
+        "u": "https://uaf.edu",
+        "g": "3.40",
+        "t": "1100",
+        "c": "$42,000",
+        "o": true
+    },
+    {
+        "n": "San Jose State University",
+        "u": "https://sjsu.edu",
+        "g": "3.55",
+        "t": "1200",
+        "c": "$42,000",
+        "o": true
+    },
+    {
+        "n": "Cal Poly Pomona",
+        "u": "https://cpp.edu",
+        "g": "3.55",
+        "t": "1180",
+        "c": "$41,000",
+        "o": true
+    },
+    {
+        "n": "Chico State",
+        "u": "https://csuchico.edu",
+        "g": "3.40",
+        "t": "1100",
+        "c": "$40,000",
+        "o": true
+    },
+    {
+        "n": "Fresno State",
+        "u": "https://fresnostate.edu",
+        "g": "3.35",
+        "t": "1050",
+        "c": "$39,000",
+        "o": true
+    },
+    {
+        "n": "UC Santa Cruz",
+        "u": "https://ucsc.edu",
+        "g": "3.75",
+        "t": "1350",
+        "c": "$68,000",
+        "o": true
+    },
+    {
+        "n": "UC Riverside",
+        "u": "https://ucr.edu",
+        "g": "3.70",
+        "t": "1280",
+        "c": "$67,000",
+        "o": true
+    },
+    {
+        "n": "UC Merced",
+        "u": "https://ucmerced.edu",
+        "g": "3.50",
+        "t": "1150",
+        "c": "$66,000",
+        "o": true
+    },
+    {
+        "n": "University of San Diego",
+        "u": "https://sandiego.edu",
+        "g": "3.90",
+        "t": "1350",
+        "c": "$78,000",
+        "o": true
+    },
+    {
+        "n": "Point Loma Nazarene University",
+        "u": "https://pointloma.edu",
+        "g": "3.80",
+        "t": "1250",
+        "c": "$65,000",
+        "o": true
+    },
+    {
+        "n": "Grand Canyon University",
+        "u": "https://gcu.edu",
+        "g": "3.50",
+        "t": "1100",
+        "c": "$35,000",
+        "o": true
+    },
+    {
+        "n": "Northern Arizona University",
+        "u": "https://nau.edu",
+        "g": "3.45",
+        "t": "1180",
+        "c": "$45,000",
+        "o": true
+    },
+    {
+        "n": "Texas Tech University",
+        "u": "https://ttu.edu",
+        "g": "3.60",
+        "t": "1180",
+        "c": "$43,000",
+        "o": true
+    },
+    {
+        "n": "Baylor University",
+        "u": "https://baylor.edu",
+        "g": "3.80",
+        "t": "1340",
+        "c": "$78,000",
+        "o": true
+    },
+    {
+        "n": "Texas Christian University",
+        "u": "https://tcu.edu",
+        "g": "3.75",
+        "t": "1320",
+        "c": "$78,000",
+        "o": true
+    },
+    {
+        "n": "Southern Methodist University",
+        "u": "https://smu.edu",
+        "g": "3.80",
+        "t": "1450",
+        "c": "$88,000",
+        "o": true
+    },
+    {
+        "n": "University of Houston",
+        "u": "https://uh.edu",
+        "g": "3.65",
+        "t": "1250",
+        "c": "$42,000",
+        "o": true
+    },
+    {
+        "n": "University of North Texas",
+        "u": "https://unt.edu",
+        "g": "3.50",
+        "t": "1160",
+        "c": "$40,000",
+        "o": true
+    },
+    {
+        "n": "University of Texas at Dallas",
+        "u": "https://utdallas.edu",
+        "g": "3.85",
+        "t": "1380",
+        "c": "$55,000",
+        "o": true
+    },
+    {
+        "n": "University of Texas at San Antonio",
+        "u": "https://utsa.edu",
+        "g": "3.45",
+        "t": "1150",
+        "c": "$40,000",
+        "o": true
+    },
+    {
+        "n": "Florida International University",
+        "u": "https://fiu.edu",
+        "g": "3.90",
+        "t": "1250",
+        "c": "$35,000",
+        "o": false
+    },
+    {
+        "n": "University of North Florida",
+        "u": "https://unf.edu",
+        "g": "3.85",
+        "t": "1240",
+        "c": "$34,000",
+        "o": false
+    },
+    {
+        "n": "Florida Atlantic University",
+        "u": "https://fau.edu",
+        "g": "3.80",
+        "t": "1200",
+        "c": "$35,000",
+        "o": false
+    },
+    {
+        "n": "Emory University",
+        "u": "https://emory.edu",
+        "g": "3.88",
+        "t": "1500",
+        "c": "$82,000",
+        "o": true
+    },
+    {
+        "n": "Spelman College",
+        "u": "https://spelman.edu",
+        "g": "3.80",
+        "t": "1240",
+        "c": "$55,000",
+        "o": true
+    },
+    {
+        "n": "Morehouse College",
+        "u": "https://morehouse.edu",
+        "g": "3.50",
+        "t": "1150",
+        "c": "$55,000",
+        "o": true
+    },
+    {
+        "n": "Howard University",
+        "u": "https://howard.edu",
+        "g": "3.65",
+        "t": "1280",
+        "c": "$58,000",
+        "o": true
+    },
+    {
+        "n": "Virginia Commonwealth University",
+        "u": "https://vcu.edu",
+        "g": "3.65",
+        "t": "1200",
+        "c": "$55,000",
+        "o": true
+    },
+    {
+        "n": "Old Dominion University",
+        "u": "https://odu.edu",
+        "g": "3.40",
+        "t": "1120",
+        "c": "$48,000",
+        "o": true
+    },
+    {
+        "n": "Radford University",
+        "u": "https://radford.edu",
+        "g": "3.35",
+        "t": "1080",
+        "c": "$42,000",
+        "o": true
+    },
+    {
+        "n": "West Virginia University",
+        "u": "https://wvu.edu",
+        "g": "3.55",
+        "t": "1180",
+        "c": "$44,000",
+        "o": true
+    },
+    {
+        "n": "Marshall University",
+        "u": "https://marshall.edu",
+        "g": "3.50",
+        "t": "1100",
+        "c": "$38,000",
+        "o": true
+    },
+    {
+        "n": "University of Louisville",
+        "u": "https://louisville.edu",
+        "g": "3.65",
+        "t": "1240",
+        "c": "$48,000",
+        "o": true
+    },
+    {
+        "n": "Western Kentucky University",
+        "u": "https://wku.edu",
+        "g": "3.45",
+        "t": "1120",
+        "c": "$42,000",
+        "o": true
+    },
+    {
+        "n": "Memphis University",
+        "u": "https://memphis.edu",
+        "g": "3.50",
+        "t": "1150",
+        "c": "$40,000",
+        "o": true
+    },
+    {
+        "n": "East Tennessee State University",
+        "u": "https://etsu.edu",
+        "g": "3.45",
+        "t": "1140",
+        "c": "$42,000",
+        "o": true
+    },
+    {
+        "n": "UAB",
+        "u": "https://uab.edu",
+        "g": "3.75",
+        "t": "1260",
+        "c": "$42,000",
+        "o": true
+    },
+    {
+        "n": "Auburn University Montgomery",
+        "u": "https://aum.edu",
+        "g": "3.35",
+        "t": "1050",
+        "c": "$35,000",
+        "o": true
+    },
+    {
+        "n": "University of South Alabama",
+        "u": "https://southalabama.edu",
+        "g": "3.50",
+        "t": "1150",
+        "c": "$38,000",
+        "o": true
+    },
+    {
+        "n": "Oregon Institute of Technology",
+        "u": "https://oit.edu",
+        "g": "3.50",
+        "t": "1180",
+        "c": "$48,000",
+        "o": true
+    },
+    {
+        "n": "Portland State University",
+        "u": "https://pdx.edu",
+        "g": "3.40",
+        "t": "1150",
+        "c": "$45,000",
+        "o": true
+    },
+    {
+        "n": "Gonzaga University",
+        "u": "https://gonzaga.edu",
+        "g": "3.85",
+        "t": "1310",
+        "c": "$72,000",
+        "o": true
+    },
+    {
+        "n": "Seattle University",
+        "u": "https://seattleu.edu",
+        "g": "3.65",
+        "t": "1280",
+        "c": "$75,000",
+        "o": true
+    },
+    {
+        "n": "Whitman College",
+        "u": "https://whitman.edu",
+        "g": "3.80",
+        "t": "1380",
+        "c": "$78,000",
+        "o": true
+    },
+    {
+        "n": "Reed College",
+        "u": "https://reed.edu",
+        "g": "3.90",
+        "t": "1480",
+        "c": "$85,000",
+        "o": true
+    },
+    {
+        "n": "University of Puget Sound",
+        "u": "https://pugetsound.edu",
+        "g": "3.60",
+        "t": "1300",
+        "c": "$76,000",
+        "o": true
+    },
+    {
+        "n": "Lewis & Clark College",
+        "u": "https://lclark.edu",
+        "g": "3.70",
+        "t": "1350",
+        "c": "$78,000",
+        "o": true
+    },
+    {
+        "n": "Willamette University",
+        "u": "https://willamette.edu",
+        "g": "3.65",
+        "t": "1280",
+        "c": "$74,000",
+        "o": true
+    },
+    {
+        "n": "Pacific University",
+        "u": "https://pacificu.edu",
+        "g": "3.60",
+        "t": "1200",
+        "c": "$72,000",
+        "o": true
+    },
+    {
+        "n": "Linfield University",
+        "u": "https://linfield.edu",
+        "g": "3.55",
+        "t": "1150",
+        "c": "$68,000",
+        "o": true
+    },
+    {
+        "n": "University of Portland",
+        "u": "https://up.edu",
+        "g": "3.75",
+        "t": "1280",
+        "c": "$72,000",
+        "o": true
+    },
+    {
+        "n": "Montana Tech",
+        "u": "https://mtech.edu",
+        "g": "3.60",
+        "t": "1220",
+        "c": "$40,000",
+        "o": true
+    },
+    {
+        "n": "University of Montana",
+        "u": "https://umt.edu",
+        "g": "3.45",
+        "t": "1180",
+        "c": "$45,000",
+        "o": true
+    },
+    {
+        "n": "South Dakota School of Mines",
+        "u": "https://sdsmt.edu",
+        "g": "3.75",
+        "t": "1300",
+        "c": "$35,000",
+        "o": true
+    },
+    {
+        "n": "University of South Dakota",
+        "u": "https://usd.edu",
+        "g": "3.50",
+        "t": "1150",
+        "c": "$32,000",
+        "o": true
+    },
+    {
+        "n": "North Dakota State University",
+        "u": "https://ndsu.edu",
+        "g": "3.55",
+        "t": "1200",
+        "c": "$35,000",
+        "o": true
+    },
+    {
+        "n": "University of North Dakota",
+        "u": "https://und.edu",
+        "g": "3.50",
+        "t": "1180",
+        "c": "$36,000",
+        "o": true
+    },
+    {
+        "n": "Minot State University",
+        "u": "https://minotstateu.edu",
+        "g": "3.30",
+        "t": "1050",
+        "c": "$28,000",
+        "o": true
+    },
+    {
+        "n": "Black Hills State University",
+        "u": "https://bhsu.edu",
+        "g": "3.30",
+        "t": "1020",
+        "c": "$30,000",
+        "o": true
+    },
+    {
+        "n": "Weber State University",
+        "u": "https://weber.edu",
+        "g": "3.40",
+        "t": "1100",
+        "c": "$32,000",
+        "o": true
+    },
+    {
+        "n": "Utah State University",
+        "u": "https://usu.edu",
+        "g": "3.60",
+        "t": "1200",
+        "c": "$38,000",
+        "o": true
+    },
+    {
+        "n": "Utah Valley University",
+        "u": "https://uvu.edu",
+        "g": "3.40",
+        "t": "1080",
+        "c": "$34,000",
+        "o": true
+    },
+    {
+        "n": "Southern Utah University",
+        "u": "https://suu.edu",
+        "g": "3.55",
+        "t": "1150",
+        "c": "$35,000",
+        "o": true
+    },
+    {
+        "n": "Dixie State University",
+        "u": "https://dixie.edu",
+        "g": "3.45",
+        "t": "1080",
+        "c": "$33,000",
+        "o": true
+    },
+    {
+        "n": "University of Denver",
+        "u": "https://du.edu",
+        "g": "3.75",
+        "t": "1310",
+        "c": "$78,000",
+        "o": true
+    },
+    {
+        "n": "Regis University",
+        "u": "https://regis.edu",
+        "g": "3.60",
+        "t": "1200",
+        "c": "$65,000",
+        "o": true
+    },
+    {
+        "n": "Colorado School of Mines",
+        "u": "https://mines.edu",
+        "g": "3.90",
+        "t": "1450",
+        "c": "$62,000",
+        "o": true
+    },
+    {
+        "n": "Colorado College",
+        "u": "https://coloradocollege.edu",
+        "g": "3.90",
+        "t": "1460",
+        "c": "$86,000",
+        "o": true
+    },
+    {
+        "n": "United States Air Force Academy",
+        "u": "https://usafa.edu",
+        "g": "3.90",
+        "t": "1420",
+        "c": "$0",
+        "o": false
+    },
+    {
+        "n": "United States Naval Academy",
+        "u": "https://usna.edu",
+        "g": "3.90",
+        "t": "1410",
+        "c": "$0",
+        "o": false
+    },
+    {
+        "n": "United States Military Academy",
+        "u": "https://westpoint.edu",
+        "g": "3.90",
+        "t": "1400",
+        "c": "$0",
+        "o": false
+    },
+    {
+        "n": "Stanford University",
+        "u": "https://stanford.edu",
+        "g": "3.96",
+        "t": "1540",
+        "c": "$82,000",
+        "o": true
+    },
+    {
+        "n": "Harvard University",
+        "u": "https://harvard.edu",
+        "g": "3.96",
+        "t": "1550",
+        "c": "$85,000",
+        "o": false
+    },
+    {
+        "n": "Yale University",
+        "u": "https://yale.edu",
+        "g": "3.95",
+        "t": "1540",
+        "c": "$84,000",
+        "o": false
+    },
+    {
+        "n": "Princeton University",
+        "u": "https://princeton.edu",
+        "g": "3.95",
+        "t": "1560",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "MIT",
+        "u": "https://mit.edu",
+        "g": "3.96",
+        "t": "1560",
+        "c": "$82,000",
+        "o": false
+    },
+    {
+        "n": "Dartmouth College",
+        "u": "https://dartmouth.edu",
+        "g": "3.95",
+        "t": "1520",
+        "c": "$85,000",
+        "o": false
+    },
+    {
+        "n": "Brown University",
+        "u": "https://brown.edu",
+        "g": "3.96",
+        "t": "1530",
+        "c": "$86,000",
+        "o": false
+    },
+    {
+        "n": "University of Pennsylvania",
+        "u": "https://upenn.edu",
+        "g": "3.95",
+        "t": "1540",
+        "c": "$86,000",
+        "o": true
+    },
+    {
+        "n": "Caltech",
+        "u": "https://caltech.edu",
+        "g": "3.97",
+        "t": "1570",
+        "c": "$84,000",
+        "o": false
+    },
+    {
+        "n": "Santa Monica College",
+        "u": "https://smc.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$22,000",
+        "o": true
+    },
+    {
+        "n": "De Anza College",
+        "u": "https://deanza.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$23,500",
+        "o": true
+    },
+    {
+        "n": "Valencia College",
+        "u": "https://valenciacollege.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$21,000",
+        "o": true
+    },
+    {
+        "n": "Miami Dade College",
+        "u": "https://mdc.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$24,000",
+        "o": true
+    },
+    {
+        "n": "Borough of Manhattan Community College",
+        "u": "https://bmcc.cuny.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$28,000",
+        "o": true
+    },
+    {
+        "n": "Houston Community College",
+        "u": "https://hccs.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$18,000",
+        "o": true
+    },
+    {
+        "n": "Northern Virginia Community College",
+        "u": "https://nvcc.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$25,000",
+        "o": true
+    },
+    {
+        "n": "Pasadena City College",
+        "u": "https://pasadena.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$22,000",
+        "o": true
+    },
+    {
+        "n": "Orange Coast College",
+        "u": "https://orangecoastcollege.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$23,000",
+        "o": true
+    },
+    {
+        "n": "Austin Community College",
+        "u": "https://austincc.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$20,000",
+        "o": true
+    },
+    {
+        "n": "Lone Star College",
+        "u": "https://lonestar.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$18,500",
+        "o": true
+    },
+    {
+        "n": "Broward College",
+        "u": "https://broward.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$21,000",
+        "o": true
+    },
+    {
+        "n": "Santa Barbara City College",
+        "u": "https://sbcc.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$24,000",
+        "o": true
+    },
+    {
+        "n": "Kirkwood Community College",
+        "u": "https://kirkwood.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$19,000",
+        "o": true
+    },
+    {
+        "n": "Wake Technical Community College",
+        "u": "https://waketech.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$17,500",
+        "o": true
+    },
+    {
+        "n": "Salt Lake Community College",
+        "u": "https://slcc.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$22,000",
+        "o": true
+    },
+    {
+        "n": "Pima Community College",
+        "u": "https://pima.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$19,500",
+        "o": true
+    },
+    {
+        "n": "Montgomery College",
+        "u": "https://montgomerycollege.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$26,000",
+        "o": true
+    },
+    {
+        "n": "City College of San Francisco",
+        "u": "https://ccsf.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$25,000",
+        "o": true
+    },
+    {
+        "n": "El Camino College",
+        "u": "https://elcamino.edu",
+        "g": "2.00",
+        "t": "N/A",
+        "c": "$22,000",
+        "o": true
+    },
+    {
+        "n": "Tufts University",
+        "u": "https://tufts.edu",
+        "g": "3.91",
+        "t": "1510",
+        "c": "$86,000",
+        "o": true
+    },
+    {
+        "n": "Brandeis University",
+        "u": "https://brandeis.edu",
+        "g": "3.80",
+        "t": "1440",
+        "c": "$84,000",
+        "o": true
+    },
+    {
+        "n": "Wesleyan University",
+        "u": "https://wesleyan.edu",
+        "g": "3.85",
+        "t": "1480",
+        "c": "$85,000",
+        "o": true
+    },
+    {
+        "n": "Vassar College",
+        "u": "https://vassar.edu",
+        "g": "3.85",
+        "t": "1470",
+        "c": "$84,000",
+        "o": true
+    },
+    {
+        "n": "Colgate University",
+        "u": "https://colgate.edu",
+        "g": "3.88",
+        "t": "1460",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "Swarthmore College",
+        "u": "https://swarthmore.edu",
+        "g": "3.90",
+        "t": "1510",
+        "c": "$81,000",
+        "o": true
+    },
+    {
+        "n": "Amherst College",
+        "u": "https://amherst.edu",
+        "g": "3.92",
+        "t": "1520",
+        "c": "$85,000",
+        "o": true
+    },
+    {
+        "n": "Williams College",
+        "u": "https://williams.edu",
+        "g": "3.94",
+        "t": "1530",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "Bowdoin College",
+        "u": "https://bowdoin.edu",
+        "g": "3.90",
+        "t": "1480",
+        "c": "$82,000",
+        "o": true
+    },
+    {
+        "n": "Carleton College",
+        "u": "https://carleton.edu",
+        "g": "3.88",
+        "t": "1490",
+        "c": "$80,000",
+        "o": true
+    },
+    {
+        "n": "Middlebury College",
+        "u": "https://middlebury.edu",
+        "g": "3.90",
+        "t": "1490",
+        "c": "$82,000",
+        "o": true
+    },
+    {
+        "n": "Wellesley College",
+        "u": "https://wellesley.edu",
+        "g": "3.90",
+        "t": "1480",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "Smith College",
+        "u": "https://smith.edu",
+        "g": "3.85",
+        "t": "1450",
+        "c": "$82,000",
+        "o": true
+    },
+    {
+        "n": "Barnard College",
+        "u": "https://barnard.edu",
+        "g": "3.90",
+        "t": "1490",
+        "c": "$86,000",
+        "o": true
+    },
+    {
+        "n": "Harvey Mudd College",
+        "u": "https://hmc.edu",
+        "g": "3.96",
+        "t": "1550",
+        "c": "$88,000",
+        "o": true
+    },
+    {
+        "n": "Scripps College",
+        "u": "https://scrippscollege.edu",
+        "g": "3.85",
+        "t": "1440",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "Pitzer College",
+        "u": "https://pitzer.edu",
+        "g": "3.80",
+        "t": "1420",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "Claremont McKenna College",
+        "u": "https://cmc.edu",
+        "g": "3.92",
+        "t": "1500",
+        "c": "$84,000",
+        "o": true
+    },
+    {
+        "n": "Cooper Union",
+        "u": "https://cooper.edu",
+        "g": "3.85",
+        "t": "1480",
+        "c": "$65,000",
+        "o": true
+    },
+    {
+        "n": "Pratt Institute",
+        "u": "https://pratt.edu",
+        "g": "3.60",
+        "t": "1280",
+        "c": "$78,000",
+        "o": true
+    },
+    {
+        "n": "Rhode Island School of Design",
+        "u": "https://risd.edu",
+        "g": "3.75",
+        "t": "1400",
+        "c": "$80,000",
+        "o": true
+    },
+    {
+        "n": "The Juilliard School",
+        "u": "https://juilliard.edu",
+        "g": "3.50",
+        "t": "N/A",
+        "c": "$75,000",
+        "o": true
+    },
+    {
+        "n": "Berklee College of Music",
+        "u": "https://berklee.edu",
+        "g": "3.40",
+        "t": "N/A",
+        "c": "$72,000",
+        "o": true
+    },
+    {
+        "n": "Babson College",
+        "u": "https://babson.edu",
+        "g": "3.80",
+        "t": "1420",
+        "c": "$81,000",
+        "o": true
+    },
+    {
+        "n": "Bentley University",
+        "u": "https://bentley.edu",
+        "g": "3.75",
+        "t": "1350",
+        "c": "$79,000",
+        "o": true
+    },
+    {
+        "n": "Emerson College",
+        "u": "https://emerson.edu",
+        "g": "3.70",
+        "t": "1340",
+        "c": "$78,000",
+        "o": true
+    },
+    {
+        "n": "Savannah College of Art and Design",
+        "u": "https://scad.edu",
+        "g": "3.55",
+        "t": "1180",
+        "c": "$58,000",
+        "o": true
+    },
+    {
+        "n": "Chapman University",
+        "u": "https://chapman.edu",
+        "g": "3.78",
+        "t": "1320",
+        "c": "$84,000",
+        "o": true
+    },
+    {
+        "n": "Occidental College",
+        "u": "https://oxy.edu",
+        "g": "3.75",
+        "t": "1400",
+        "c": "$82,000",
+        "o": true
+    },
+    {
+        "n": "Oberlin College",
+        "u": "https://oberlin.edu",
+        "g": "3.80",
+        "t": "1440",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "Kenyon College",
+        "u": "https://kenyon.edu",
+        "g": "3.85",
+        "t": "1430",
+        "c": "$81,000",
+        "o": true
+    },
+    {
+        "n": "Grinnell College",
+        "u": "https://grinnell.edu",
+        "g": "3.90",
+        "t": "1480",
+        "c": "$80,000",
+        "o": true
+    },
+    {
+        "n": "Hamilton College",
+        "u": "https://hamilton.edu",
+        "g": "3.88",
+        "t": "1470",
+        "c": "$82,000",
+        "o": true
+    },
+    {
+        "n": "Union College",
+        "u": "https://union.edu",
+        "g": "3.70",
+        "t": "1380",
+        "c": "$84,000",
+        "o": true
+    },
+    {
+        "n": "Skidmore College",
+        "u": "https://skidmore.edu",
+        "g": "3.75",
+        "t": "1360",
+        "c": "$82,000",
+        "o": true
+    },
+    {
+        "n": "Trinity College (CT)",
+        "u": "https://trincoll.edu",
+        "g": "3.70",
+        "t": "1410",
+        "c": "$85,000",
+        "o": true
+    },
+    {
+        "n": "Connecticut College",
+        "u": "https://conncoll.edu",
+        "g": "3.70",
+        "t": "1390",
+        "c": "$84,000",
+        "o": true
+    },
+    {
+        "n": "Bates College",
+        "u": "https://bates.edu",
+        "g": "3.85",
+        "t": "1420",
+        "c": "$82,000",
+        "o": true
+    },
+    {
+        "n": "Colby College",
+        "u": "https://colby.edu",
+        "g": "3.90",
+        "t": "1490",
+        "c": "$83,000",
+        "o": true
+    },
+    {
+        "n": "Haverford College",
+        "u": "https://haverford.edu",
+        "g": "3.90",
+        "t": "1490",
+        "c": "$84,000",
+        "o": true
+    },
+    {
+        "n": "Bryn Mawr College",
+        "u": "https://brynmawr.edu",
+        "g": "3.85",
+        "t": "1430",
+        "c": "$82,000",
+        "o": true
+    },
+    {
+        "n": "Macalester College",
+        "u": "https://macalester.edu",
+        "g": "3.85",
+        "t": "1440",
+        "c": "$78,000",
+        "o": true
+    },
+    {
+        "n": "St. Olaf College",
+        "u": "https://stolaf.edu",
+        "g": "3.75",
+        "t": "1350",
+        "c": "$72,000",
+        "o": true
+    },
+    {
+        "n": "University of North Georgia",
+        "u": "https://ung.edu",
+        "g": "3.55",
+        "t": "1150",
+        "c": "$35,000",
+        "o": true
+    },
+    {
+        "n": "Appalachian State University",
+        "u": "https://appstate.edu",
+        "g": "3.65",
+        "t": "1200",
+        "c": "$42,000",
+        "o": true
+    },
+    {
+        "n": "Kennesaw State University",
+        "u": "https://kennesaw.edu",
+        "g": "3.45",
+        "t": "1140",
+        "c": "$38,000",
+        "o": true
+    },
+    {
+        "n": "Georgia State University",
+        "u": "https://gsu.edu",
+        "g": "3.50",
+        "t": "1160",
+        "c": "$45,000",
+        "o": true
+    },
+    {
+        "n": "California State University, Northridge",
+        "u": "https://csun.edu",
+        "g": "3.40",
+        "t": "1080",
+        "c": "$41,000",
+        "o": true
+    },
+    {
+        "n": "University of Central Arkansas",
+        "u": "https://uca.edu",
+        "g": "3.55",
+        "t": "1150",
+        "c": "$34,000",
+        "o": true
+    },
+    {
+        "n": "Texas State University",
+        "u": "https://txstate.edu",
+        "g": "3.45",
+        "t": "1120",
+        "c": "$41,000",
+        "o": true
+    }
+]
