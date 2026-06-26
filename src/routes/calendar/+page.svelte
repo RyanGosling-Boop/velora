@@ -9,32 +9,28 @@
   }
 
   const DEFAULT_EVENTS: CalendarEvent[] = [
-    { id: "1", title: "Stanford EA",    date: "2024-11-01" },
-    { id: "2", title: "FAFSA Opens",    date: "2024-11-01" },
-    { id: "3", title: "UC Application", date: "2024-11-01" },
-    { id: "4", title: "Housing Form",   date: "2024-11-01" },
-    { id: "5", title: "Scholarship App",date: "2024-11-01" },
+    { id: "1", title: "Stanford EA",    date: "2026-11-01" },
+    { id: "2", title: "FAFSA Opens",    date: "2026-11-01" },
   ];
 
-  // ── Persist ───────────────────────────────────────────────
+  // ── State ───────────────────────────────────────────────
   let events = $state<CalendarEvent[]>(loadStore<CalendarEvent[]>('calendar', DEFAULT_EVENTS));
-
+  
   $effect(() => {
     saveStore('calendar', events);
   });
-  // ─────────────────────────────────────────────────────────
 
   let today = new Date();
   let viewYear  = $state(2026);
-  let viewMonth = $state(5);
+  let viewMonth = $state(5); 
 
-  let showModal  = $state(false);
-  let formTitle  = $state('');
-  let formDate   = $state('');
+  let showModal   = $state(false);
+  let formTitle   = $state('');
+  let formDate    = $state('');
   let hoveredDate = $state<string | null>(null);
 
-  const START_YEAR  = 2026; const START_MONTH = 5;
-  const END_YEAR    = 2040; const END_MONTH   = 5;
+  const START_YEAR  = 2024;
+  const END_YEAR    = 2030;
 
   let viewDate = $derived(new Date(viewYear, viewMonth, 1));
 
@@ -61,20 +57,20 @@
     return days;
   });
 
+  // ── Actions ──────────────────────────────────────────────
   function changeMonth(step: number) {
     let tm = viewMonth + step;
     let ty = viewYear;
     if (tm > 11) { tm = 0; ty++; }
     else if (tm < 0) { tm = 11; ty--; }
-    if (ty < START_YEAR || (ty === START_YEAR && tm < START_MONTH)) return;
-    if (ty > END_YEAR   || (ty === END_YEAR   && tm > END_MONTH))   return;
-    viewMonth = tm; viewYear = ty;
+    if (ty < START_YEAR || ty > END_YEAR) return;
+    viewMonth = tm; 
+    viewYear = ty;
   }
 
   function jumpToToday() {
-    const cy = today.getFullYear();
-    const cm = today.getMonth();
-    if (cy >= START_YEAR && cy <= END_YEAR) { viewYear = cy; viewMonth = cm; }
+    viewYear = today.getFullYear();
+    viewMonth = today.getMonth();
   }
 
   function saveDeadline() {
@@ -92,15 +88,24 @@
 
 <div class="app-container">
   <header class="controls">
-    <div class="month-display">
+    <div class="month-year-group">
       <h1>{viewDate.toLocaleString('default', { month: 'long' })}</h1>
-      <span>{viewDate.getFullYear()}</span>
+      <span class="year-label">{viewDate.getFullYear()}</span>
     </div>
-    <div class="nav-group">
-      <button class="nav-btn" onclick={() => changeMonth(-1)}>←</button>
-      <button class="nav-btn today-btn" onclick={jumpToToday}>Today</button>
-      <button class="nav-btn" onclick={() => changeMonth(1)}>→</button>
+
+    <!-- Minimal Capsule -->
+    <div class="capsule-nav">
+      <button class="nav-icon-btn" onclick={() => changeMonth(-1)}>
+        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M15 18l-6-6 6-6" /></svg>
+      </button>
+      <div class="divider"></div>
+      <button class="nav-today-btn" onclick={jumpToToday}>Today</button>
+      <div class="divider"></div>
+      <button class="nav-icon-btn" onclick={() => changeMonth(1)}>
+        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 18l6-6-6-6" /></svg>
+      </button>
     </div>
+
     <button class="add-deadline-btn" onclick={() => { formDate = ''; showModal = true; }}>
       + Add Deadline
     </button>
@@ -108,7 +113,7 @@
 
   <div class="calendar-wrapper">
     <div class="weekday-header">
-      {#each ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'] as day}
+      {#each ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'] as day}
         <div class="weekday">{day}</div>
       {/each}
     </div>
@@ -147,11 +152,7 @@
                   <div class="full-event-item">
                     <span class="bullet"></span>
                     <span class="flex-1">{event.title}</span>
-                    <button
-                      onclick={(e) => deleteEvent(event.id, e)}
-                      class="delete-event-btn"
-                      aria-label="Delete event"
-                    >✕</button>
+                    <button onclick={(e) => deleteEvent(event.id, e)} class="delete-event-btn">✕</button>
                   </div>
                 {/each}
               </div>
@@ -168,12 +169,12 @@
     <div class="modal" onclick={(e) => e.stopPropagation()} role="presentation">
       <h2>New Deadline</h2>
       <div class="input-stack">
-        <input type="text" bind:value={formTitle} placeholder="What's the deadline?" autofocus />
+        <input type="text" bind:value={formTitle} placeholder="Deadline title..." autofocus />
         <input type="date" bind:value={formDate} />
       </div>
       <div class="modal-actions">
         <button class="cancel-btn" onclick={() => showModal = false}>Discard</button>
-        <button class="save-btn" onclick={saveDeadline}>Add to Calendar</button>
+        <button class="save-btn" onclick={saveDeadline}>Add</button>
       </div>
     </div>
   </div>
@@ -183,50 +184,133 @@
   :global(html, body) {
     margin: 0; padding: 0; height: 100%;
     background-color: #000; color: #fff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
   }
-  .app-container { display: flex; flex-direction: column; height: 100vh; padding: 20px; box-sizing: border-box; }
-  .controls { display: flex; justify-content: space-between; align-items: center; padding: 10px 0 20px 0; flex-shrink: 0; }
-  .month-display { display: flex; align-items: baseline; gap: 10px; }
-  .month-display h1 { margin: 0; font-size: 32px; font-weight: 600; }
-  .month-display span { color: #444; font-size: 24px; }
-  .nav-group { display: flex; background: #111; border-radius: 12px; padding: 4px; gap: 4px; }
-  .nav-btn { background: transparent; border: none; color: #888; padding: 8px 16px; cursor: pointer; border-radius: 8px; font-weight: 500; }
-  .nav-btn:hover { color: #fff; background: #222; }
-  .today-btn { color: #fff; background: #222; }
-  .add-deadline-btn { background: #fff; color: #000; border: none; padding: 12px 24px; border-radius: 12px; font-weight: 600; cursor: pointer; }
-  .calendar-wrapper { flex: 1; min-height: 0; display: flex; flex-direction: column; border: 1px solid #222; border-radius: 20px; overflow: visible; background: #222; }
-  .weekday-header { display: grid; grid-template-columns: repeat(7, 1fr); background: #000; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom: 1px solid #222; flex-shrink: 0; }
-  .weekday { padding: 15px; text-align: center; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #444; font-weight: 700; }
-  .grid { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(7, 1fr); grid-template-rows: repeat(6, minmax(0, 1fr)); gap: 1px; background: #222; }
-  .cell { background: #000; padding: 12px; position: relative; cursor: pointer; transition: background 0.2s; min-height: 0; }
+
+  .app-container { 
+    display: flex; flex-direction: column; height: 100vh; 
+    padding: 20px 40px; box-sizing: border-box; 
+  }
+
+  /* ── Header ────────────────────────────────────────────── */
+  .controls { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 20px 0 30px 0; flex-shrink: 0; 
+  }
+
+  .month-year-group { min-width: 220px; }
+  .month-year-group h1 { 
+    margin: 0; font-size: 32px; font-weight: normal; letter-spacing: -1px; 
+  }
+  .year-label { color: #555; font-size: 16px; margin-top: 2px; display: block; }
+
+  /* ── Minimal Capsule ───────────────────────────────────── */
+  .capsule-nav {
+    display: flex; align-items: center; background: #111; 
+    border: 1px solid #222; border-radius: 50px; padding: 2px; height: 36px;
+  }
+
+  .nav-icon-btn, .nav-today-btn {
+    background: transparent; border: none; color: #888; 
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease; font-family: Arial, sans-serif;
+  }
+
+  .nav-icon-btn { width: 36px; height: 32px; border-radius: 50px; }
+  .nav-today-btn { font-size: 13px; padding: 0 16px; height: 32px; border-radius: 50px; }
+
+  .nav-icon-btn:hover, .nav-today-btn:hover { color: #fff; background: #222; }
+  .nav-icon-btn:active { transform: scale(0.9); }
+
+  .divider { width: 1px; height: 14px; background: #222; margin: 0 2px; }
+
+  .add-deadline-btn { 
+    background: #fff; color: #000; border: none; padding: 10px 20px; 
+    border-radius: 50px; font-size: 13px; cursor: pointer; 
+    transition: opacity 0.2s; font-family: Arial, sans-serif;
+  }
+  .add-deadline-btn:hover { opacity: 0.85; }
+
+  /* ── Calendar Grid ────────────────────────────────────── */
+  .calendar-wrapper { 
+    flex: 1; display: flex; flex-direction: column; 
+    border: 1px solid #1a1a1a; border-radius: 12px; overflow: hidden; 
+  }
+
+  .weekday-header { 
+    display: grid; grid-template-columns: repeat(7, 1fr); 
+    background: #080808; border-bottom: 1px solid #1a1a1a; 
+  }
+  .weekday { 
+    padding: 12px; text-align: center; font-size: 11px; 
+    color: #444; font-weight: normal; 
+  }
+
+  .grid { 
+    flex: 1; display: grid; grid-template-columns: repeat(7, 1fr); 
+    grid-template-rows: repeat(6, 1fr); gap: 1px; background: #1a1a1a; 
+  }
+
+  .cell { background: #000; padding: 12px; position: relative; cursor: pointer; }
   .cell:hover { background: #050505; }
   .not-current { background: #020202; }
   .not-current .day-num { color: #222; }
-  .cell-header { flex-shrink: 0; }
-  .day-num { font-size: 14px; color: #555; }
-  .is-today { background: #fff; color: #000 !important; padding: 2px 8px; border-radius: 6px; font-weight: bold; }
-  .event-preview-stack { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; max-height: 72px; overflow: hidden; }
-  .mini-event { background: #111; border: 1px solid #222; padding: 4px 8px; border-radius: 6px; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 0; }
-  .more-tag { font-size: 10px; color: #444; font-weight: 600; padding-left: 4px; flex-shrink: 0; }
-  .floating-details { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 220px; z-index: 1000; pointer-events: none; }
-  .details-inner { background: #111; border: 1px solid #333; border-radius: 16px; padding: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.8); animation: fadeIn 0.15s ease-out; pointer-events: auto; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-  .details-date { margin: 0 0 12px 0; font-size: 12px; color: #555; font-weight: bold; text-transform: uppercase; }
-  .full-event-item { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid #222; font-size: 13px; color: #eee; }
-  .bullet { width: 6px; height: 6px; background: #fff; border-radius: 50%; flex-shrink: 0; }
-  .delete-event-btn { background: none; border: none; color: #555; cursor: pointer; font-size: 11px; padding: 2px 4px; border-radius: 4px; line-height: 1; }
-  .delete-event-btn:hover { color: #ef4444; background: rgba(239,68,68,0.1); }
-  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 2000; }
-  .modal { background: #111; border: 1px solid #222; padding: 40px; border-radius: 24px; width: 400px; display: flex; flex-direction: column; gap: 24px; }
-  .modal h2 { margin: 0; font-size: 24px; font-weight: 500; }
-  .input-stack { display: flex; flex-direction: column; gap: 12px; }
-  .input-stack input[type="text"] { background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; font-size: 20px; padding: 10px 0; outline: none; }
-  .input-stack input[type="text"]:focus { border-bottom-color: #fff; }
-  .input-stack input[type="date"] { background: #1a1a1a; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 12px; font-size: 14px; }
-  .modal-actions { display: flex; justify-content: flex-end; gap: 16px; margin-top: 10px; }
-  .cancel-btn { background: transparent; border: none; color: #555; cursor: pointer; font-size: 14px; }
-  .save-btn { background: #fff; color: #000; border: none; padding: 12px 24px; border-radius: 12px; font-weight: 600; cursor: pointer; }
-  :global(.calendar-wrapper *) { box-sizing: border-box; }
+
+  .day-num { font-size: 13px; color: #666; display: inline-block; }
+
+  /* White Highlight for Today */
+  .is-today { 
+    background: #fff; color: #000 !important; 
+    padding: 3px 7px; border-radius: 4px; font-weight: normal; 
+  }
+
+  .event-preview-stack { margin-top: 8px; display: flex; flex-direction: column; gap: 3px; }
+  .mini-event { 
+    background: #111; border: 1px solid #1a1a1a; padding: 3px 6px; 
+    border-radius: 4px; font-size: 11px; color: #ccc;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
+  }
+  .more-tag { font-size: 10px; color: #333; margin-top: 2px; }
+
+  /* ── Details Tooltip ──────────────────────────────────── */
+  .floating-details { 
+    position: absolute; top: -5px; left: 50%; 
+    transform: translateX(-50%); width: 200px; z-index: 50; pointer-events: none; 
+  }
+  .details-inner { 
+    background: #0a0a0a; border: 1px solid #222; border-radius: 8px; 
+    padding: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); pointer-events: auto; 
+  }
+  .details-date { margin: 0 0 8px 0; font-size: 10px; color: #555; text-transform: uppercase; }
+  .full-event-item { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid #111; font-size: 12px; }
+  .bullet { width: 5px; height: 5px; background: #fff; border-radius: 50%; }
+  .delete-event-btn { background: none; border: none; color: #444; cursor: pointer; font-size: 10px; }
+  .delete-event-btn:hover { color: #fff; }
+
+  /* ── Modal ────────────────────────────────────────────── */
+  .modal-overlay { 
+    position: fixed; inset: 0; background: rgba(0,0,0,0.85); 
+    display: flex; align-items: center; justify-content: center; z-index: 1000; 
+  }
+  .modal { 
+    background: #000; border: 1px solid #222; padding: 40px; border-radius: 12px; 
+    width: 320px; display: flex; flex-direction: column; gap: 20px; 
+  }
+  .modal h2 { margin: 0; font-size: 20px; font-weight: normal; }
+  .input-stack input[type="text"] { 
+    background: transparent; border: none; border-bottom: 1px solid #222; 
+    color: #fff; font-size: 16px; padding: 8px 0; outline: none; width: 100%;
+    font-family: Arial, sans-serif;
+  }
+  .input-stack input[type="date"] { 
+    background: #111; border: 1px solid #222; color: #fff; 
+    padding: 8px; border-radius: 4px; margin-top: 10px; width: 100%;
+    font-family: Arial, sans-serif;
+  }
+  .modal-actions { display: flex; justify-content: flex-end; gap: 15px; }
+  .cancel-btn { background: transparent; border: none; color: #555; cursor: pointer; font-size: 13px; }
+  .save-btn { background: #fff; color: #000; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; }
+
+  .flex-1 { flex: 1; }
 </style>
