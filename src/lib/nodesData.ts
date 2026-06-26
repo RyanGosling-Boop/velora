@@ -11,7 +11,7 @@ import {
 // PLACEHOLDER TEXT — easy to find & replace
 // ─────────────────────────────────────────────
 
-const PLACEHOLDER_DESC = 'Resource description  replace with real content.';
+const PLACEHOLDER_DESC = '';
 
 function res(id: string, title: string, url: string, type: NodeResource['type']) {
     return {

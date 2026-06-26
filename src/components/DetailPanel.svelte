@@ -1,7 +1,7 @@
 <!-- src/components/DetailPanel.svelte -->
 <script lang="ts">
-  import { Lock, ArrowRight, ExternalLink, CheckCircle2, Circle, BookOpen, Video, Wrench, FileText, Calculator, ScrollText, ChevronDown, ChevronUp } from 'lucide-svelte';
-  import type { PathfinderNode, NodeResource, ResourceType } from '../lib/types';
+  import { Lock, ArrowRight, ExternalLink, CheckCircle2, Circle, ChevronDown, ChevronUp } from 'lucide-svelte';
+  import type { PathfinderNode, NodeResource } from '../lib/types';
   import { isPossibleToComplete, nodePositionIsBranch } from '../lib/utils';
 
   interface Props {
@@ -19,7 +19,6 @@
     possible
   );
 
-  // Track which resource section is expanded
   let resourcesExpanded = $state(true);
 
   // Derived resource progress
@@ -35,101 +34,60 @@
     );
     onNodeUpdate(selectedNode.id, updated);
   }
-
-  function getResourceIcon(type: ResourceType) {
-    switch (type) {
-      case 'video': return Video;
-      case 'tool': return Wrench;
-      case 'guide': return ScrollText;
-      case 'official': return FileText;
-      case 'calculator': return Calculator;
-      default: return BookOpen;
-    }
-  }
-
-  function getResourceTypeLabel(type: ResourceType): string {
-    switch (type) {
-      case 'video': return 'Video';
-      case 'tool': return 'Tool';
-      case 'guide': return 'Guide';
-      case 'official': return 'Official';
-      case 'calculator': return 'Calculator';
-      default: return 'Article';
-    }
-  }
-
-  function getResourceTypeBadgeClass(type: ResourceType): string {
-    switch (type) {
-      case 'video': return 'text-purple-400 bg-purple-950/40 border-purple-900/60';
-      case 'tool': return 'text-blue-400 bg-blue-950/40 border-blue-900/60';
-      case 'guide': return 'text-amber-400 bg-amber-950/40 border-amber-900/60';
-      case 'official': return 'text-emerald-400 bg-emerald-950/40 border-emerald-900/60';
-      case 'calculator': return 'text-pink-400 bg-pink-950/40 border-pink-900/60';
-      default: return 'text-zinc-400 bg-zinc-900 border-zinc-800';
-    }
-  }
 </script>
 
-<div class="w-full md:w-72 lg:w-96 h-auto md:h-full bg-zinc-950/20 flex flex-col shrink-0 relative z-10 border-t md:border-t-0 border-white/10 overflow-y-auto overscroll-contain scrollbar-thin select-text min-w-0 break-words">
+<div class="w-full md:w-80 lg:w-[400px] h-auto md:h-full bg-zinc-950/20 flex flex-col shrink-0 relative z-10 border-t md:border-t-0 border-white/10 overflow-y-auto overscroll-contain scrollbar-thin select-text min-w-0 break-words">
 
   <!-- Header Section -->
-  <div class="p-5 md:p-6 lg:p-8 pb-4 border-b border-white/5 space-y-4">
-
+  <div class="p-6 md:p-8 lg:p-10 pb-6 border-b border-white/5 space-y-6">
     <!-- Status Badges -->
-    <div class="flex flex-wrap gap-2">
+    <div class="flex flex-wrap gap-2.5">
       {#if selectedNode.status === 'completed'}
-        <span class="inline-flex items-center gap-1 text-[9px] md:text-[10px] uppercase font-mono tracking-wider text-emerald-400 bg-emerald-950/40 border border-emerald-900 px-2.5 py-0.5 rounded-full">
+        <span class="inline-flex items-center gap-1.5 text-[10px] uppercase font-mono tracking-widest text-emerald-400 bg-emerald-950/30 border border-emerald-900/50 px-3 py-1 rounded-full">
           ● Completed
         </span>
       {:else if selectedNode.status === 'current'}
-        <span class="inline-flex items-center gap-1 text-[9px] md:text-[10px] uppercase font-mono tracking-wider text-zinc-100 bg-zinc-900 border border-zinc-850 px-2.5 py-0.5 rounded-full animate-pulse">
-          ▲ Active Focus
+        <span class="inline-flex items-center gap-1.5 text-[10px] uppercase font-mono tracking-widest text-zinc-100 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-full animate-pulse">
+          ▲ Active
         </span>
       {:else if possible}
-        <span class="inline-flex items-center gap-1 text-[9px] md:text-[10px] uppercase font-mono tracking-wider text-amber-400/80 bg-amber-950/20 border border-amber-900/60 px-2.5 py-0.5 rounded-full">
+        <span class="inline-flex items-center gap-1.5 text-[10px] uppercase font-mono tracking-widest text-amber-400/80 bg-amber-950/20 border border-amber-900/40 px-3 py-1 rounded-full">
           ⬡ Available
         </span>
       {:else}
-        <span class="inline-flex items-center gap-1 text-[9px] md:text-[10px] uppercase font-mono tracking-wider text-zinc-500 bg-zinc-900 border border-zinc-850 px-2.5 py-0.5 rounded-full">
+        <span class="inline-flex items-center gap-1.5 text-[10px] uppercase font-mono tracking-widest text-zinc-500 bg-zinc-900 border border-zinc-850 px-3 py-1 rounded-full">
           ■ Locked
         </span>
       {/if}
 
       {#if nodePositionIsBranch(selectedNode.position)}
-        <span class="inline-flex items-center gap-1 text-[9px] md:text-[10px] uppercase font-mono tracking-wider text-zinc-400 bg-zinc-900 border border-zinc-800 px-2.5 py-0.5 rounded-full">
+        <span class="inline-flex items-center gap-1.5 text-[10px] uppercase font-mono tracking-widest text-zinc-400 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-full">
           Optional
-        </span>
-      {/if}
-
-      {#if selectedNode.track}
-        <span class="inline-flex items-center gap-1 text-[9px] md:text-[10px] uppercase font-mono tracking-wider text-sky-400 bg-sky-950/30 border border-sky-900/60 px-2.5 py-0.5 rounded-full">
-          {selectedNode.track}
         </span>
       {/if}
     </div>
 
     <!-- Title & Description -->
-    <div class="space-y-2">
-      <h2 class="text-lg md:text-xl font-semibold tracking-tight text-zinc-100">
+    <div class="space-y-3">
+      <h2 class="text-xl md:text-2xl font-semibold tracking-tight text-zinc-100 leading-tight">
         {selectedNode.title}
       </h2>
-      <p class="text-[11px] md:text-xs text-zinc-400 leading-relaxed">
+      <p class="text-xs md:text-sm text-zinc-500 leading-relaxed max-w-[90%]">
         {selectedNode.description}
       </p>
     </div>
   </div>
 
-  <!-- Resource Progress Bar -->
+  <!-- Resource Progress Bar (Updated to Green) -->
   {#if totalResources > 0}
-    <div class="px-5 md:px-6 lg:px-8 py-3 border-b border-white/5">
-      <div class="flex items-center justify-between mb-1.5">
-        <span class="text-[9px] uppercase tracking-wider font-mono text-zinc-500">Resources</span>
-        <span class="text-[10px] font-mono text-zinc-400">{completedResources}/{totalResources}</span>
+    <div class="px-6 md:px-8 lg:px-10 py-5 border-b border-white/5">
+      <div class="flex items-center justify-between mb-2.5">
+        <span class="text-[10px] uppercase tracking-[0.2em] font-mono text-zinc-500">Progress</span>
+        <span class="text-[10px] font-mono text-zinc-400">{completedResources} of {totalResources}</span>
       </div>
-      <div class="h-[2px] w-full bg-zinc-900 rounded-full overflow-hidden">
+      <div class="h-[3px] w-full bg-zinc-900 rounded-full overflow-hidden">
         <div
-          class="h-full rounded-full transition-all duration-500
-            {allResourcesDone ? 'bg-emerald-500' : 'bg-amber-400'}"
+          class="h-full rounded-full transition-all duration-700 ease-out bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"
           style="width: {resourcePercent}%"
         ></div>
       </div>
@@ -138,83 +96,69 @@
 
   <!-- Resources List -->
   <div class="flex-1 min-h-0">
-
-    <!-- Resources Toggle Header -->
     {#if totalResources > 0}
       <button
         onclick={() => resourcesExpanded = !resourcesExpanded}
-        class="w-full flex items-center justify-between px-5 md:px-6 lg:px-8 py-3 text-left hover:bg-white/[0.02] transition-colors group"
+        class="w-full flex items-center justify-between px-6 md:px-8 lg:px-10 py-4 text-left hover:bg-white/[0.02] transition-colors group"
       >
-        <span class="text-[10px] uppercase tracking-widest font-mono text-zinc-500 group-hover:text-zinc-400 transition-colors">
-          Learning Resources
+        <span class="text-[10px] uppercase tracking-[0.2em] font-mono text-zinc-500 group-hover:text-zinc-300 transition-colors">
+          Resources
         </span>
         {#if resourcesExpanded}
-          <ChevronUp class="w-3.5 h-3.5 text-zinc-600 group-hover:text-zinc-400 transition-colors" />
+          <ChevronUp class="w-4 h-4 text-zinc-700 group-hover:text-zinc-400 transition-colors" />
         {:else}
-          <ChevronDown class="w-3.5 h-3.5 text-zinc-600 group-hover:text-zinc-400 transition-colors" />
+          <ChevronDown class="w-4 h-4 text-zinc-700 group-hover:text-zinc-400 transition-colors" />
         {/if}
       </button>
     {/if}
 
     {#if resourcesExpanded && totalResources > 0}
-      <ul class="px-3 md:px-4 lg:px-5 pb-4 space-y-1">
+      <ul class="px-4 md:px-6 lg:px-8 pb-8 space-y-2">
         {#each selectedNode.resources as resource (resource.id)}
-          <li class="group relative">
-            <div class="flex items-start gap-3 p-2.5 rounded-lg transition-colors
-              {isUnlocked ? 'hover:bg-white/[0.03] cursor-default' : 'opacity-40 cursor-not-allowed'}
-              {resource.completed ? 'opacity-70' : ''}"
+          <li class="group/item">
+            <div class="flex items-start gap-4 p-3.5 rounded-xl transition-all duration-200
+              {isUnlocked ? 'hover:bg-white/[0.04]' : 'opacity-30 cursor-not-allowed'}
+              {resource.completed ? 'opacity-60' : ''}"
             >
               <!-- Checkbox -->
               <button
                 onclick={() => toggleResource(resource.id)}
                 disabled={!isUnlocked}
-                class="mt-0.5 shrink-0 text-zinc-600 hover:text-zinc-300 transition-colors focus:outline-none
-                  {resource.completed ? 'text-emerald-500 hover:text-emerald-400' : ''}
+                class="mt-0.5 shrink-0 transition-transform active:scale-90 focus:outline-none
+                  {resource.completed ? 'text-emerald-500' : 'text-zinc-700 hover:text-zinc-500'}
                   {!isUnlocked ? 'pointer-events-none' : ''}"
-                aria-label="Toggle resource: {resource.title}"
               >
                 {#if resource.completed}
-                  <CheckCircle2 class="w-4 h-4" />
+                  <CheckCircle2 class="w-5 h-5" />
                 {:else}
-                  <Circle class="w-4 h-4" />
+                  <Circle class="w-5 h-5" />
                 {/if}
               </button>
 
-              <!-- Content -->
-              <div class="flex-1 min-w-0 space-y-1">
-                <div class="flex items-start gap-2">
-                  <span class="text-[11px] md:text-xs font-medium leading-snug
+              <div class="flex-1 min-w-0 pt-0.5">
+                <div class="flex items-start justify-between gap-4">
+                    <span class="text-xs md:text-[13px] font-medium leading-normal
                     {resource.completed ? 'text-zinc-500 line-through' : 'text-zinc-200'}">
                     {resource.title}
-                  </span>
-                </div>
+                    </span>
 
-                <div class="flex items-center gap-2">
-                  <!-- Type Badge -->
-                  <span class="inline-flex items-center gap-1 text-[8px] uppercase tracking-wider font-mono border px-1.5 py-0.5 rounded
-                    {getResourceTypeBadgeClass(resource.type)}">
-                    <svelte:component this={getResourceIcon(resource.type)} class="w-2.5 h-2.5" />
-                    {getResourceTypeLabel(resource.type)}
-                  </span>
-
-                  <!-- External Link -->
-                  {#if isUnlocked}
+                    {#if isUnlocked}
                     <a
-                      href={resource.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onclick={(e) => e.stopPropagation()}
-                      class="inline-flex items-center gap-1 text-[9px] text-zinc-600 hover:text-zinc-300 transition-colors font-mono"
-                      aria-label="Open {resource.title}"
+                        href={resource.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="shrink-0 p-1 -m-1 text-white opacity-40 group-hover/item:opacity-100 transition-all hover:scale-110"
+                        title="Open Resource"
                     >
-                      <ExternalLink class="w-2.5 h-2.5" />
-                      Open
+                        <ExternalLink class="w-4 h-4" strokeWidth={2.5} />
                     </a>
-                  {/if}
+                    {/if}
                 </div>
 
-                {#if resource.description && resource.description !== 'Resource description placeholder — replace with real content.'}
-                  <p class="text-[10px] text-zinc-500 leading-relaxed">
+                {#if resource.description && 
+                     resource.description.trim() !== '' && 
+                     !resource.description.toLowerCase().includes('resource description')}
+                  <p class="text-[11px] text-zinc-500 leading-relaxed mt-2 pr-4">
                     {resource.description}
                   </p>
                 {/if}
@@ -227,37 +171,25 @@
   </div>
 
   <!-- Footer Action -->
-  <div class="p-5 md:p-6 lg:px-8 border-t border-white/5 mt-auto shrink-0">
-    {#if selectedNode.status === 'completed'}
-      <div class="text-[11px] md:text-xs text-zinc-500 font-mono">
-        ✓ Completed. Review resources above anytime.
+  <div class="mt-auto shrink-0">
+    {#if !isUnlocked}
+      <div class="p-6 md:p-8 lg:px-10 border-t border-white/5 bg-black/20">
+        <div class="text-xs text-zinc-600 flex items-center gap-3 italic">
+          <Lock class="w-4 h-4" />
+          Reach this milestone to unlock resources.
+        </div>
       </div>
-    {:else if selectedNode.status === 'current' || possible}
-      {#if allResourcesDone}
-        <div class="space-y-2">
-          <div class="text-[10px] text-emerald-400 font-mono mb-2">
-            ✓ All resources reviewed
+    {:else if allResourcesDone && selectedNode.status !== 'completed'}
+      <div class="p-6 md:p-8 lg:px-10 border-t border-white/5 bg-black/20">
+        <div class="space-y-4">
+          <div class="text-[10px] text-emerald-400 font-mono tracking-widest uppercase text-center">
+            Ready to progress
           </div>
-          <button class="w-full h-10 bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-semibold rounded-lg flex items-center justify-center gap-2 shadow-lg transition-all duration-150">
-            Mark as Complete
-            <ArrowRight class="w-3.5 h-3.5" />
+          <button class="w-full h-12 bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-bold uppercase tracking-widest rounded-xl flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all active:scale-[0.98]">
+            Mark Complete
+            <ArrowRight class="w-4 h-4" />
           </button>
         </div>
-      {:else}
-        <button class="w-full h-10 bg-white hover:bg-zinc-200 text-black text-xs font-semibold rounded-lg flex items-center justify-center gap-2 shadow-lg transition-all duration-150">
-          Begin Module
-          <ArrowRight class="w-3.5 h-3.5" />
-        </button>
-        {#if totalResources > 0}
-          <p class="text-[9px] text-zinc-600 font-mono mt-2 text-center">
-            Check off resources above as you complete them
-          </p>
-        {/if}
-      {/if}
-    {:else}
-      <div class="text-[11px] md:text-xs text-zinc-600 flex items-center gap-2">
-        <Lock class="w-3.5 h-3.5" />
-        Complete previous nodes to unlock this block.
       </div>
     {/if}
   </div>
@@ -266,6 +198,6 @@
 <style>
   .scrollbar-thin {
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+    scrollbar-color: rgba(255, 255, 255, 0.05) transparent;
   }
 </style>
