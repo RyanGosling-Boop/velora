@@ -14,16 +14,19 @@
 </script>
 
 <div class="w-10 shrink-0 relative z-50 group" style="height: 100vh;">
+  <!-- Changed bg-zinc-900 to bg-black here -->
   <aside class="absolute left-0 top-0 h-full w-10 group-hover:w-48 bg-black border-r border-white/10 flex flex-col justify-between pt-3 pb-4 select-none overflow-hidden transition-[width] duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)]">
-    <div class="absolute inset-0 bg-zinc-950/60 backdrop-blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+    <!-- Removed the backdrop-blur div as it might cause color inconsistency if not carefully managed -->
+    <!-- <div class="absolute inset-0 bg-zinc-950/60 backdrop-blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div> -->
 
     <!-- Top Logo -->
     <div class="relative z-10 w-full px-1.5 shrink-0">
       <div class="flex items-center h-10 w-full px-1">
         <div class="w-7 flex justify-start items-center shrink-0">
-          <div class="h-5 w-5 bg-white text-black flex items-center justify-center font-bold text-[10px] rounded-sm">V</div>
+          <!-- Your logo from static/logo.png -->
+          <img src="/logo.png" alt="Logo" class="h-5 w-5 object-contain" />
         </div>
-        <span class="text-sm font-semibold tracking-tight text-white transition-opacity duration-200 opacity-0 group-hover:opacity-100 whitespace-nowrap ml-2.5">Velora</span>
+        <span class="text-sm font-semibold tracking-tight text-white transition-opacity duration-200 opacity-0 group-hover:opacity-100 whitespace-nowrap ml-2.5">velora</span>
       </div>
     </div>
 
