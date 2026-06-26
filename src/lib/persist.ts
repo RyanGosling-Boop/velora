@@ -7,7 +7,8 @@
 
 const STORE_VERSION = 1;
 
-type StoreKey = 'map' | 'colleges' | 'activities' | 'calendar';
+// Added 'documents' to the valid keys
+type StoreKey = 'map' | 'colleges' | 'activities' | 'calendar' | 'documents';
 
 function key(pillar: StoreKey): string {
     return `velora_v${STORE_VERSION}_${pillar}`;
@@ -24,6 +25,9 @@ export function saveStore<T>(pillar: StoreKey, data: T): void {
 
 export function loadStore<T>(pillar: StoreKey, fallback: T): T {
     try {
+        // Ensure we are in a browser environment
+        if (typeof window === 'undefined') return fallback;
+
         const raw = localStorage.getItem(key(pillar));
         if (!raw) return fallback;
         return JSON.parse(raw) as T;
@@ -38,25 +42,22 @@ export function clearStore(pillar: StoreKey): void {
 }
 
 export function clearAll(): void {
-    (['map', 'colleges', 'activities', 'calendar'] as StoreKey[]).forEach(clearStore);
+    (['map', 'colleges', 'activities', 'calendar', 'documents'] as StoreKey[]).forEach(clearStore);
 }
 
 // ─────────────────────────────────────────────────────────────
 // Per-pillar shape definitions — what actually gets saved
 // ─────────────────────────────────────────────────────────────
 
-// MAP — only save the mutable parts (status + resource completions)
-// The full node definition (title, description, icon, etc.) always
-// comes from nodesData.ts — we never persist static content.
+// MAP
 export interface SavedNodeState {
     id: string;
     status: 'completed' | 'current' | 'upcoming';
-    resourceIds: string[]; // IDs of completed resources only
+    resourceIds: string[];
 }
-
 export type MapStore = SavedNodeState[];
 
-// COLLEGES — the entire user-built college list
+// COLLEGES
 export interface SavedCollege {
     id: number;
     name: string;
@@ -68,10 +69,9 @@ export interface SavedCollege {
     url: string;
     isManual?: boolean;
 }
-
 export type CollegesStore = SavedCollege[];
 
-// ACTIVITIES — each extracurricular entry
+// ACTIVITIES
 export interface SavedActivity {
     id: number;
     name: string;
@@ -82,17 +82,23 @@ export interface SavedActivity {
     category: string;
     yearsActive: string[];
 }
-
 export type ActivitiesStore = SavedActivity[];
 
-// CALENDAR — events / deadlines
+// CALENDAR
 export interface SavedCalendarEvent {
     id: number;
     title: string;
-    date: string; // ISO string
+    date: string;
     type: string;
     notes?: string;
     completed?: boolean;
 }
-
 export type CalendarStore = SavedCalendarEvent[];
+
+// DOCUMENTS — The writing area persistence
+export interface SavedDocument {
+    id: string;
+    title: string;
+    content: string;
+}
+export type DocumentsStore = SavedDocument[];

@@ -1,20 +1,22 @@
 <script lang="ts">
-  // Changed icons to Chevrons
   import { Plus, File, Trash2, ChevronLeft, ChevronRight } from 'lucide-svelte';
+  // Import the persistence logic
+  import { loadStore, saveStore, type DocumentsStore } from '$lib/persist';
 
-  interface Doc {
-    id: string;
-    title: string;
-    content: string;
-  }
-
-  let docs = $state<Doc[]>([
+  // 1. Initialize 'docs' from localStorage using loadStore
+  let docs = $state<DocumentsStore>(loadStore('documents', [
     { id: '1', title: 'Personal Statement', content: '' },
     { id: '2', title: 'Supplemental Essay', content: '' }
-  ]);
+  ]));
 
-  let activeId = $state('1');
+  // 2. Initialize activeId based on loaded data
+  let activeId = $state(docs[0]?.id || '1');
   let showSidebar = $state(true);
+
+  // 3. This effect runs every time 'docs' changes, saving it to localStorage
+  $effect(() => {
+    saveStore('documents', docs);
+  });
 
   let activeDoc = $derived(docs.find(d => d.id === activeId) || docs[0]);
   let wordCount = $derived(activeDoc.content.trim() ? activeDoc.content.trim().split(/\s+/).length : 0);
@@ -93,7 +95,7 @@
     
     <!-- Top Navigation -->
     <header class="h-20 flex items-center justify-between px-8">
-      <!-- Bigger Chevron Toggle -->
+      <!-- Chevron Toggle: Size 28 -->
       <button 
         onclick={() => showSidebar = !showSidebar} 
         class="text-white/40 hover:text-white transition-colors"
@@ -105,7 +107,7 @@
         {/if}
       </button>
       
-      <!-- Title text size changed to 20px -->
+      <!-- Header Font Size: 20px -->
       <input 
         type="text" 
         value={activeDoc.title}
@@ -114,14 +116,13 @@
         spellcheck="false"
       />
 
-      <!-- Balance offset for the toggle button -->
       <div class="w-[28px]"></div>
     </header>
 
     <!-- Editor -->
     <div class="flex-1 overflow-y-auto w-full flex justify-center">
       <div class="w-full max-w-3xl px-12 py-12">
-        <!-- Placeholder color changed to dim white (white/20) -->
+        <!-- Placeholder: white/20 (Dim White) -->
         <textarea
           value={activeDoc.content}
           oninput={updateContent}
