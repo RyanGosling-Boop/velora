@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { Plus, Trash2, ExternalLink, ChevronDown, Check, ChevronUp, Pencil } from 'lucide-svelte';
+  import { onMount, untrack } from 'svelte';
+  import { Plus, Trash2, ExternalLink, ChevronDown, Check, ChevronUp } from 'lucide-svelte';
   import { Switch } from 'bits-ui';
   import { saveStore, loadStore } from '$lib/persist';
 
@@ -16,37 +16,63 @@
     isManual?: boolean;
   }
 
-  // ── Reactive State (Fixed Types for Squigglies) ──────────
+  // ── State Initialization ────────────────────────────────────
   
-  // Cast loadStore specifically to the type expected
-  let colleges = $state<College[]>(
-    (loadStore('colleges') as College[]) || [
-      { id: 1, name: 'Stanford University', status: 'Reach', cost: '$82,412', avgGpa: '3.96', avgTest: '1540', testOptional: true, url: 'https://stanford.edu' }
-    ]
-  );
+  // Load saved colleges or start with an empty array if none exist
+  const savedColleges = loadStore('colleges') as College[];
+  let colleges = $state<College[]>(savedColleges || [
+    { id: Date.now(), name: '', status: 'Target', cost: '', avgGpa: '', avgTest: '', testOptional: true, url: '' }
+  ]);
 
-  // Replace your current declarations with these:
-  let userGpa = $state<number>(Number(loadStore('userGpa' as any)) || 3.7);
-  let userTest = $state<number>(Number(loadStore('userTest' as any)) || 1300);
-
-  // Sync to storage
-  $effect(() => {
-    saveStore('colleges', colleges);
-    saveStore('userGpa', userGpa);
-    saveStore('userTest', userTest);
-  });
-  // ────────────────────────────────────────────────────────────
+  let userGpa = $state<number>(Number(loadStore('userGpa' as any)) || 3.0);
+  let userTest = $state<number>(Number(loadStore('userTest' as any)) || 1000);
 
   let universityDb      = $state<any[]>([]);
   let activeSuggestions = $state<any[]>([]);
   let activeRowId       = $state<number | null>(null);
   let openDropdownId    = $state<number | null>(null);
 
+  // ── Effects ──────────────────────────────────────────────────
+
+  // Persistence: Save data whenever it changes
+  $effect(() => {
+    saveStore('colleges', colleges);
+    saveStore('userGpa', userGpa);
+    saveStore('userTest', userTest);
+  });
+
+  // Auto-Status Calculation:
+  // We want this to run when user stats change, but not loop when college status is updated
+  $effect(() => {
+    const gpa = userGpa;
+    const test = userTest;
+
+    untrack(() => {
+      colleges.forEach(college => {
+        // Skip if user manually set the status or if there's no data
+        if (college.isManual || !college.name) return;
+        
+        const uniGpa  = parseFloat(college.avgGpa)  || 0;
+        const uniTest = parseFloat(college.avgTest) || 0;
+        if (!uniGpa || !uniTest) return;
+        
+        if (gpa >= uniGpa + 0.1 && test >= uniTest + 50) {
+          college.status = 'Safety';
+        } else if (gpa < uniGpa || test < uniTest) {
+          college.status = 'Reach';
+        } else {
+          college.status = 'Target';
+        }
+      });
+    });
+  });
+
+  // ── Logic ────────────────────────────────────────────────────
+
   onMount(async () => {
     try {
       const res = await fetch('/uniList.json');
-      if (!res.ok) throw new Error('File not found');
-      universityDb = await res.json();
+      if (res.ok) universityDb = await res.json();
     } catch (e) {
       console.error('Failed to load university database.', e);
     }
@@ -71,26 +97,22 @@
       colleges[index].avgTest      = uni.t   || '';
       colleges[index].cost         = uni.c   || '';
       colleges[index].testOptional = uni.o === true || uni.o === 'true';
-      colleges[index].isManual     = false;
+      colleges[index].isManual     = false; // Reset to auto-calculation
     }
     activeSuggestions = []; activeRowId = null;
   }
 
-  $effect(() => {
-    colleges.forEach(college => {
-      if (college.isManual || !college.name) return;
-      const uniGpa  = parseFloat(college.avgGpa)  || 0;
-      const uniTest = parseFloat(college.avgTest) || 0;
-      if (!uniGpa || !uniTest) return;
-      
-      if (userGpa >= uniGpa + 0.1 && userTest >= uniTest + 50) college.status = 'Safety';
-      else if (userGpa < uniGpa || userTest < uniTest)         college.status = 'Reach';
-      else                                                     college.status = 'Target';
-    });
-  });
-
   function addRow() {
-    colleges.push({ id: Date.now(), name: '', status: 'Target', cost: '', avgGpa: '', avgTest: '', testOptional: true, url: '' });
+    colleges.push({ 
+      id: Date.now(), 
+      name: '', 
+      status: 'Target', 
+      cost: '', 
+      avgGpa: '', 
+      avgTest: '', 
+      testOptional: true, 
+      url: '' 
+    });
   }
 
   function removeRow(id: number) {
@@ -103,17 +125,22 @@
     { value: 'Safety', label: 'Safety', color: 'text-green-500',  bg: 'hover:bg-green-500/20' },
   ] as const;
 
+  // Global click handler to close dropdowns
   if (typeof window !== 'undefined') {
-    window.onclick = () => { openDropdownId = null; activeRowId = null; };
+    window.onclick = () => { 
+      openDropdownId = null; 
+      activeRowId = null; 
+    };
   }
 </script>
 
 <div class="h-screen w-full flex flex-col bg-black text-zinc-300 selection:bg-zinc-800 arial-only">
 
+  <!-- Header Section -->
   <div class="px-8 py-10 flex justify-between items-end bg-black">
     <div class="flex gap-20">
       
-      <!-- GPA Input with Minimal Indicator -->
+      <!-- GPA Input -->
       <div class="flex flex-col gap-2 group relative cursor-text">
         <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 group-hover:text-zinc-400 transition-colors">Current GPA</p>
         <div class="flex items-baseline gap-1">
@@ -124,11 +151,10 @@
             class="w-20 bg-transparent text-4xl font-normal text-white leading-none outline-none border-none p-0 focus:text-zinc-100 transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           />
         </div>
-        <!-- Interaction Line: Expands on hover, glows on focus -->
         <div class="absolute -bottom-2 left-0 h-[2px] w-6 bg-zinc-800 group-hover:w-full group-hover:bg-zinc-500 transition-all duration-300"></div>
       </div>
 
-      <!-- Test Input with Minimal Indicator -->
+      <!-- Test Input -->
       <div class="flex flex-col gap-2 group relative cursor-text">
         <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 group-hover:text-zinc-400 transition-colors">Current Test</p>
         <div class="flex items-baseline gap-1">
@@ -138,10 +164,8 @@
             class="w-28 bg-transparent text-4xl font-normal text-white leading-none outline-none border-none p-0 focus:text-zinc-100 transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           />
         </div>
-        <!-- Interaction Line -->
         <div class="absolute -bottom-2 left-0 h-[2px] w-6 bg-zinc-800 group-hover:w-full group-hover:bg-zinc-500 transition-all duration-300"></div>
       </div>
-
     </div>
 
     <button onclick={addRow} class="h-10 px-6 bg-zinc-100 hover:bg-white text-black text-[11px] font-bold uppercase tracking-[0.1em] rounded-md flex items-center gap-2 transition-all active:scale-95">
@@ -149,6 +173,7 @@
     </button>
   </div>
 
+  <!-- Table Section -->
   <div class="flex-1 overflow-auto border-t border-zinc-900">
     <table class="w-full border-separate border-spacing-0 table-fixed min-w-[1000px]">
       <thead>
@@ -165,6 +190,7 @@
       <tbody>
         {#each colleges as college (college.id)}
           <tr class="group hover:bg-zinc-900/40 transition-colors">
+            <!-- Institution Name & Search -->
             <td class="p-0 border-b border-r border-zinc-900 relative overflow-visible">
               <input
                 bind:value={college.name}
@@ -185,6 +211,7 @@
               {/if}
             </td>
 
+            <!-- Status Dropdown -->
             <td class="p-0 border-b border-r border-zinc-900 relative">
               <button
                 onclick={(e) => { e.stopPropagation(); openDropdownId = openDropdownId === college.id ? null : college.id; }}
@@ -207,10 +234,12 @@
               {/if}
             </td>
 
+            <!-- Cost -->
             <td class="p-0 border-b border-r border-zinc-900">
               <input bind:value={college.cost} class="w-full h-14 bg-transparent px-4 text-[13px] text-zinc-400 outline-none" placeholder="—" />
             </td>
 
+            <!-- Avg GPA -->
             <td class="p-0 border-b border-r border-zinc-900">
               <div class="flex items-center h-14 px-4 gap-2 justify-between">
                 <input bind:value={college.avgGpa} class="w-12 bg-transparent text-[13px] text-zinc-200 outline-none" placeholder="0.0" />
@@ -223,6 +252,7 @@
               </div>
             </td>
 
+            <!-- Avg Test -->
             <td class="p-0 border-b border-r border-zinc-900">
               <div class="flex items-center h-14 px-4 gap-2 justify-between">
                 <input bind:value={college.avgTest} class="w-16 bg-transparent text-[13px] text-zinc-200 outline-none" placeholder="0000" />
@@ -234,6 +264,7 @@
               </div>
             </td>
 
+            <!-- Test Optional Switch -->
             <td class="p-0 border-b border-r border-zinc-900">
               <div class="w-full h-14 flex items-center justify-center">
                 <Switch.Root bind:checked={college.testOptional} class="h-4 w-8 rounded-full border border-zinc-700 data-[state=checked]:bg-green-500 bg-zinc-800 transition-colors">
@@ -242,6 +273,7 @@
               </div>
             </td>
 
+            <!-- Reference Link & Actions -->
             <td class="p-0 border-b border-zinc-900 relative">
               <div class="flex items-center w-full h-14 px-8 group/cell">
                 <input bind:value={college.url} class="flex-1 bg-transparent text-[11px] text-zinc-500 outline-none truncate mr-12" placeholder="LINK_PENDING" />
@@ -271,7 +303,6 @@
   .flex-1::-webkit-scrollbar { width: 6px; }
   .flex-1::-webkit-scrollbar-thumb { background: #27272a; border-radius: 0px; }
 
-  /* Smooth number input removal */
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
