@@ -7,6 +7,13 @@
   function handleImageError(e) {
     e.target.style.display = 'none';
   }
+
+  import { onMount } from 'svelte';
+  let showMobileWarning = false;
+
+  onMount(() => {
+    showMobileWarning = window.innerWidth < 768;
+  });
 </script>
 
 <svelte:head>
@@ -27,6 +34,25 @@
 
 <!-- Main Container: flex items-center and min-h-screen ensures vertical centering on big screens -->
 <div class="min-h-screen flex items-center justify-center bg-zinc-950 px-6 py-20">
+  {#if showMobileWarning}
+    <div class="fixed inset-0 z-50 flex items-end justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div class="w-full max-w-sm bg-zinc-900 border border-zinc-700 rounded-xl p-5 shadow-2xl space-y-3">
+        <p class="text-zinc-100 font-semibold text-sm">Mobile Not Supported Yet</p>
+        <p class="text-zinc-400 text-xs leading-relaxed">
+          As a solo developer, I haven't had the chance to optimize this for mobile or narrow screens yet.
+          If you're a developer and would like to help, please 
+          <a href="https://github.com/get-velora/velora/pulls" target="_blank" class="text-zinc-200 underline underline-offset-2 hover:text-white transition-colors">submit a PR</a>.
+          I apologize for the inconvenience.
+        </p>
+        <button 
+          on:click={() => showMobileWarning = false}
+          class="w-full h-9 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-medium rounded-lg transition-colors"
+        >
+          Dismiss
+        </button>
+      </div>
+    </div>
+  {/if}
   <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 max-w-[1600px] mx-auto w-full">
     
     <!-- Left Column: Text & CTA -->
